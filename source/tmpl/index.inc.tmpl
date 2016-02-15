@@ -1,0 +1,23 @@
+{{= include('includes/newsBanner_en-GB.tmpl') }}
+<!--[if lt IE 9]>
+<div class="browser-notify">
+    <div class="browser-notify__banner">
+        <div class="browser-notify__icon"></div>
+        <span>This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer</span>
+    </div>
+</div>
+<![endif]-->
+
+<style>
+{{= include("../scss/news_special/loading.css") }}
+</style>
+
+<div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
+	<div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
+	<div class="tempShareToolsHolder"></div>
+	<p style="color: white; position: absolute; margin: 1em;">iFS 1.7.7</p>
+    <div class="delayed-image-load" data-src="{{= pathStatic }}/{{= vocab_dir }}/img/320/testcard.jpg" data-width="320" style="width: 100%;"></div>
+</div>
+{{=  include("./creditsShareAndMore.tmpl") }}
+
+{{=  include("./includes/inline.js.tmpl") }}
