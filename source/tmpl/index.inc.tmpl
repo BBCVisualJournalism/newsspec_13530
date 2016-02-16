@@ -15,7 +15,11 @@
 <div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
 	<div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
 
-    {{= include("./ticker.tmpl") }}
+    <div class="ticker">
+        <p id="ticker_text">
+            <strong id="ticker_name">Orwa Mohammad al-Sharef</strong><span id="ticker_genderage">, a man</span> from <span id="ticker_location">Raqqa</span>, <strong id="ticker_cause">was shot and killed</strong> on <span id="ticker_date">25 Match 2011</span>.
+        </p>
+    </div>
 </div>
 {{=  include("./creditsShareAndMore.tmpl") }}
 
