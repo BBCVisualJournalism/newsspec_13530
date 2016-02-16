@@ -1,4 +1,30 @@
 /* separate your sass into different files to keep it maintainable!  */
-.main img {
-    width: 100%;
+.main {
+    line-height: 1.25;
+    img {
+        width: 100%;
+    }
+}
+
+.ticker {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    li {
+        margin: 8px auto;
+        width: 976px;
+        font-size: 18px;
+    }
+    &-active {
+        overflow: hidden;
+        height: 60px;
+        li {
+            display: none;
+        }
+    }
+    .ticker_item-active {
+        display: block;
+    }
 }
