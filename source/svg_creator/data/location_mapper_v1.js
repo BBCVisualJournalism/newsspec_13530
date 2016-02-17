@@ -1,0 +1,1 @@
+define(function() { var location_mapper = ["Daraa", "Lattakia", "Homs", "Damascus Suburbs", "Idlib", "Deir Ezzor", "Aleppo", "Tartous", "Damascus", "Hama", "Hasakeh", "Sweida", "Raqqa", "Other", "Quneitra"]; return location_mapper; });
