@@ -12,11 +12,11 @@ module.exports = function (grunt) {
             grunt.log.writeln('Adding news banner tmpl file');
 
             var bannerImgHost = 'http://news.bbcimg.co.uk/news/special/2015/newsspec_12021/';
-            var defualtLanguageimgPath = bannerImgHost + 'news.png';
-            var defualtLanguageBannerUrl = 'http://www.bbc.co.uk/news';
+            var defaultLanguageimgPath = bannerImgHost + 'news.png';
+            var defaultLanguageBannerUrl = 'http://www.bbc.co.uk/news';
             if (languageConfig.languageLookup[config.services.default]) {
-                defualtLanguageimgPath = bannerImgHost + languageConfig.languageLookup[config.services.default].bannerImgPath;
-                defualtLanguageBannerUrl = languageConfig.languageLookup[config.services.default].url;
+                defaultLanguageimgPath = bannerImgHost + languageConfig.languageLookup[config.services.default].bannerImgPath;
+                defaultLanguageBannerUrl = languageConfig.languageLookup[config.services.default].url;
             }
 
             var rtlStyle = (languageConfig.languageLookup[config.services.default].direction == 'rtl') ? 'text-align:right; direction:rtl;' : '';
@@ -24,8 +24,8 @@ module.exports = function (grunt) {
 
             var newsHeaderStr = '<div class="full-frame-scaffold-news-banner">' +
                                     '<div class="full-frame-scaffold-news-banner__logo">' +
-                                        '<a href="' + defualtLanguageBannerUrl + '" class="full-frame-scaffold-news-banner__btn">' +
-                                            '<img src="' + defualtLanguageimgPath + '" class="full-frame-scaffold-news-banner__img">' +
+                                        '<a href="' + defaultLanguageBannerUrl + '" class="full-frame-scaffold-news-banner__btn">' +
+                                            '<img src="' + defaultLanguageimgPath + '" class="full-frame-scaffold-news-banner__img">' +
                                         '</a>' +
                                     '</div>' +
                                 '</div>';
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
 
         var defaultLanguage = languageConfig.languageLookup[config.services.default].code || 'en-GB';
 
-        var defualtBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + defaultLanguage + '.tmpl', 'utf8');
+        var defaultBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + defaultLanguage + '.tmpl', 'utf8');
 
         services.forEach(function (service) {
             
@@ -97,8 +97,8 @@ module.exports = function (grunt) {
             var languageIndexIncContents = fs.readFileSync('content/' + service + '/index.inc', 'utf8');
             var languageTestHtmlContents = fs.readFileSync('content/' + service + '/test.html', 'utf8');
 
-            languageIndexIncContents = languageIndexIncContents.replace(defualtBannerMarkup, languageBannerMarkup);
-            languageTestHtmlContents = languageTestHtmlContents.replace(defualtBannerMarkup, languageBannerMarkup);
+            languageIndexIncContents = languageIndexIncContents.replace(defaultBannerMarkup, languageBannerMarkup);
+            languageTestHtmlContents = languageTestHtmlContents.replace(defaultBannerMarkup, languageBannerMarkup);
 
             fs.writeFileSync('content/' + service + '/index.inc', languageIndexIncContents);
             fs.writeFileSync('content/' + service + '/test.html', languageTestHtmlContents);
