@@ -1,0 +1,68 @@
+{{= include('includes/news-banner-en-GB.tmpl') }}
+<!--[if lt IE 9]>
+<div class="browser-notify">
+    <div class="browser-notify__banner">
+        <div class="browser-notify__icon"></div>
+        <span>{{ //hero_title }}</span>
+    </div>
+</div>
+<![endif]-->
+
+<style>
+{{= include("../scss/news_special/loading.css") }}
+</style>
+<link rel="stylesheet" href="{{= pathStatic }}/{{= vocab_dir }}/css/boilerplate.css"/>
+
+<div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
+    <div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
+    <div class="tempShareToolsHolder"></div>
+
+    <section class="hero-image" style="background-image: url(http://placehold.it/1920x768);">
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <div class="hero-title">
+                    <h1>{{ //hero_title }}</h1>
+                    <p class="hero-subtitle">{{ //hero_subtitle }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section grid-wrapper">
+        <div class="story-timestamp">
+            <div class="story-meta">
+                <ul class="story-metalist">
+                    <li class='timestamp'><div class="date">{{ //timestamp }}</div></li>
+                    <li><a href="{{ //topic_link }}">{{ //topic_label }}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="story-content">
+            <section class="rte story-body">
+                <p class="intro">{{ //section_1_intro_paragraph }}</p>
+                <p>{{ //section_1_paragraph }}</p>
+
+                <blockquote>
+                    {{ //section_1_blockquote }}
+                    <cite>{{ //section_1_blockquote_credit }}</cite>
+                </blockquote>
+
+                <h2>{{ //section_1_subtitle }}</h2>
+                <img src="http://placehold.it/616x350">
+            </section>
+        </div>
+    </section>
+    <section class="story-image-full">
+        <figure>
+            <img src="http://placehold.it/1289x512">
+            <figcaption>
+                <div class="grid-wrapper">
+                    <p>{{ //section_1_caption }}</p>
+                </div>
+            </figcaption>
+        </figure>
+    </section>
+</div>
+{{=  include("./credits-share-and-more.tmpl") }}
+
+{{=  include("./includes/inline.js.tmpl") }}

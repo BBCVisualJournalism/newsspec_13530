@@ -1,9 +1,9 @@
-{{= include('includes/newsBanner_en-GB.tmpl') }}
+{{= include('includes/news-banner-en-GB.tmpl') }}
 <!--[if lt IE 9]>
 <div class="browser-notify">
     <div class="browser-notify__banner">
         <div class="browser-notify__icon"></div>
-        <span>This site is optimised for modern web browsers, and does not fully support your version of Internet Explorer</span>
+        <span>{{ //hero_title }}</span>
     </div>
 </div>
 <![endif]-->
@@ -11,16 +11,61 @@
 <style>
 {{= include("../scss/news_special/loading.css") }}
 </style>
+<link rel="stylesheet" href="{{= pathStatic }}/{{= vocab_dir }}/css/boilerplate.css"/>
 
 <div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
-	<div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
+    <div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
+    <div class="tempShareToolsHolder"></div>
+
+    <section class="hero-image" style="background-image: url(http://placehold.it/1920x768);">
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <div class="hero-title">
+                    <h1>Syria: Roll call of the dead</h1>
+                    <p class="hero-subtitle"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section grid-wrapper">
+        <div class="story-timestamp">
+            <div class="story-meta">
+                <ul class="story-metalist">
+                    <li class='timestamp'><div class="date">Timestamp</div></li>
+                    <li><a href="{{ //topic_link }}">Middle East</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="story-content">
+            <div class="rte story-body">
+                <p class="intro">
+                    Civil war in Syria has been raging for five years, bearing a devastating human cost that is difficult to quantify. The Violations Documentation Centre in Syria has confirmed the deaths of 91,318 civilians in the conflict so far, although this is likely to be a low estimate of the true total because many people have been killed in areas where data is impossible to corroborate.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <div class="ticker">
-        <p id="ticker_text">
-            <strong id="ticker_name">Orwa Mohammad al-Sharef</strong><span id="ticker_genderage">, a man</span> from <span id="ticker_location">Raqqa</span>, <strong id="ticker_cause">was shot and killed</strong> on <span id="ticker_date">25 Match 2011</span>.
-        </p>
+        <div class="grid-wrapper">
+            <div class="story-content">
+                <p id="ticker_text">
+                    <strong id="ticker_name">Orwa Mohammad al-Sharef</strong><span id="ticker_genderage">, a man</span> from <span id="ticker_location">Raqqa</span>, <strong id="ticker_cause">was shot and killed</strong> on <span id="ticker_date">25 Match 2011</span>.
+                </p>
+            </div>
+        </div>
     </div>
+
+    <section class="story-section grid-wrapper">
+        <div class="story-content">
+            <div class="rte story-body">
+                <p>
+                    If you were to read out the names of all the civilians confirmed dead by the VDC, taking on average two seconds per name, it would take <strong>more than three days</strong>. To read out the names of all the children known to have died in the conflict would take <strong>nearly nine hours</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
 </div>
-{{=  include("./creditsShareAndMore.tmpl") }}
+{{=  include("./credits-share-and-more.tmpl") }}
 
 {{=  include("./includes/inline.js.tmpl") }}

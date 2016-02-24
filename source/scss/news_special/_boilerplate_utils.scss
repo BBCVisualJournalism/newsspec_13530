@@ -1,0 +1,156 @@
+%column {
+    padding: 0 4px;
+
+    @include respondMinMax (600px, false) { padding: 4px; }
+    @include respondMinMax (800px, false) { padding: 8px; }
+    @include respondMinMax (1008px, false) { padding: 8px; }
+}
+
+%page-margins {
+    margin: 0 4px;
+    max-width: 1008px;
+    @include respondMinMax (400px, false) { margin: 0 16px; }
+    @include respondMinMax (800px, false) { margin: 0 16px; }
+    @include respondMinMax (1008px, false) { margin: 0 auto; }
+}
+
+%half-page-margins {
+    margin: 0 4px;
+    max-width: 1008px;
+    @include respondMinMax (400px, false) { margin: 0 8px; }
+    @include respondMinMax (800px, false) { margin: 0 8px; }
+    @include respondMinMax (1008px, false) { margin: 0 auto; }
+    @include respondMinMax (1280px, false) { max-width: 1280px; }
+}
+
+%page-padding {
+    padding: 0 8px;
+    @include respondMinMax (400px, false) { padding: 0 16px; }
+    // @include break($break--g2) { padding: 0 $page__margin--group-2; }
+    @include respondMinMax (800px, false) { padding: 0 16px; }
+    @include respondMinMax (1008px, false) { padding: 0 16px; }
+
+    & > * {
+        max-width: 1008px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@function col-margin-width($number) {
+    $colmarginwidth: (1 - ($number / 12)) * 50%;
+    @return $colmarginwidth;
+}
+
+@function col-width($number) {
+    $colwidth: ($number / 12) * 100%;
+    @return $colwidth;
+}
+
+@mixin centre-columns($number) {
+    margin-left: col-margin-width($number);
+    margin-right: col-margin-width($number);
+}
+
+@mixin columns($number) {
+    // $colwidth: (100 / $number) * 1%;
+    width: col-width($number);
+}
+
+@mixin k-columns($number) {
+    padding-left: 4px;
+    padding-right: 4px;
+    @include columns($number);
+
+    @include respondMinMax (600px, false) { padding-left: 8px; padding-right: 8px; }
+    @include respondMinMax (800px, false) { padding-left: 8px; padding-right: 8px; }
+    @include respondMinMax (1008px, false) { padding-left: 8px; padding-right: 8px; }
+}
+
+@mixin clearfix {
+    &::after {
+        content: " ";
+        font-size: 0;
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    .oldie &:after {
+        content: " ";
+        font-size: 0;
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+}
+
+.grid-wrapper {
+    @extend %half-page-margins;
+    @include respondMinMax (1008px, false) { padding:  0 8px; }
+}
+
+.wrapper {
+    @extend %page-margins;
+    @include respondMinMax (1008px, false) { padding:  0 16px; }
+}
+
+.wrapper-no-pad {
+    @extend %page-margins;
+    @include respondMinMax (1008px, false) { padding:  0 8px; }
+}
+
+.wrapper--text {
+    @extend %page-padding;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+.content-section { margin-top: 1em; }
+
+.rte {
+    h1 { margin-top: .667em; }
+    h3 { margin-top: 1em; }
+    h3 + p { margin-top: .5em; }
+    * + img {
+        margin-top: 1em;
+    }
+
+    a {
+        color: #404040;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid #dcdcdc;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border: 0;
+        }
+    }
+
+    img + img {
+        margin-top: .5em;
+    }
+
+    img + p, p + img {
+        margin-top: 1.5em;
+    }
+
+    @include respondMinMax (37.5em, false) {
+        img + p, p + img {
+            margin-top: 1.75em;
+        }
+    }
+
+    ul, ol { margin: 1em 0; }
+
+    .intro {
+        font-weight: bold;
+    }
+}

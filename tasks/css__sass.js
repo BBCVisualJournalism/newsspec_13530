@@ -4,6 +4,7 @@ module.exports = function (grunt) {
             files: {
                 './content/<%= config.services.default %>/css/main.css':      './source/scss/main.scss',
                 './content/<%= config.services.default %>/css/legacy-ie.css': './source/scss/legacy-ie.scss',
+                './content/<%= config.services.default %>/css/boilerplate.css': './source/scss/boilerplate.scss'
             }
         },
         inline: {

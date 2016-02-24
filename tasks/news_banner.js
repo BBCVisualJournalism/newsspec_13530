@@ -32,13 +32,13 @@ module.exports = function (grunt) {
 
             var defaultLanguage = languageConfig.languageLookup[config.services.default].code || 'en-GB';
 
-            fs.writeFileSync('source/tmpl/includes/newsBanner_' + defaultLanguage + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
+            fs.writeFileSync('source/tmpl/includes/news-banner-' + defaultLanguage + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
 
             done();
         
     });
 
-    grunt.registerTask('newsBanner:build_all_other_sites', function () {
+    grunt.registerTask('newsBanner:buildAllOtherSites', function () {
         var services = grunt.iframeScaffold.services;
         var pkg         = grunt.file.readJSON('package.json');
         var config      = grunt.config.get('config');
@@ -73,13 +73,13 @@ module.exports = function (grunt) {
 
             var languageCode = languageConfig.languageLookup[service].code || 'en-GB';
 
-            fs.writeFileSync('source/tmpl/includes/newsBanner_' + languageCode + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
+            fs.writeFileSync('source/tmpl/includes/news_banner_' + languageCode + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
         });
 
         done();
     });
 
-    grunt.registerTask('newsBanner:replace_language_news_banners', function () {
+    grunt.registerTask('newsBanner:replaceLanguageNewsBanners', function () {
         var services = grunt.iframeScaffold.services;
         var config      = grunt.config.get('config');
         var languageConfig      = grunt.config.get('languageConfig');
@@ -88,11 +88,11 @@ module.exports = function (grunt) {
 
         var defaultLanguage = languageConfig.languageLookup[config.services.default].code || 'en-GB';
 
-        var defualtBannerMarkup = fs.readFileSync('source/tmpl/includes/newsBanner_' + defaultLanguage + '.tmpl', 'utf8');
+        var defualtBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + defaultLanguage + '.tmpl', 'utf8');
 
         services.forEach(function (service) {
             
-            var languageBannerMarkup = fs.readFileSync('source/tmpl/includes/newsBanner_' + languageConfig.languageLookup[service].code + '.tmpl', 'utf8');
+            var languageBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + languageConfig.languageLookup[service].code + '.tmpl', 'utf8');
 
             var languageIndexIncContents = fs.readFileSync('content/' + service + '/index.inc', 'utf8');
             var languageTestHtmlContents = fs.readFileSync('content/' + service + '/test.html', 'utf8');

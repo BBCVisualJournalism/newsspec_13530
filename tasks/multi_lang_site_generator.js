@@ -8,6 +8,10 @@ module.exports = function (grunt) {
     var projectFiles = {
         'test.html': 'test.html.tmpl',
         'index.inc':  'index.inc.tmpl',
+
+        'test-boilerplate.html': 'test-boilerplate.html.tmpl',
+        'boilerplate.inc':  'boilerplate.inc.tmpl',
+        
         'head_meta.inc':  'head_meta.inc.tmpl'
     };
 
@@ -16,19 +20,19 @@ module.exports = function (grunt) {
     // You shouldn't need to edit anything below here
     // *************************************************************************
 
-    grunt.registerTask('perform_multi_lang_site_generator', function () {
+    grunt.registerTask('performMultiLangSiteGenerator', function () {
 
         var config = grunt.config.get('config'),
             languageConfig = grunt.config.get('languageConfig'),
             orb = grunt.file.readJSON('tasks/orb.json'),
             inlineStyleElm = grunt.file.read("content/" + config.services.default + "/css/inline.css"),
             inlineLiteJs = '',
-            multi_lang_site_generator_data;
+            multiLangSiteGeneratorData;
 
         inlineLiteJs   = '<script>' + inlineLiteJs + '</script>';
         inlineStyleElm = '<style>' + inlineStyleElm + '</style>';
 
-        multi_lang_site_generator_data = {
+        multiLangSiteGeneratorData = {
             version:             '<%= pkg.version %>',
             inlineLiteJs:        inlineLiteJs,
             inlineStyleElm:      inlineStyleElm,
@@ -43,14 +47,14 @@ module.exports = function (grunt) {
             languageConfig:      '<%= languageConfig %>'
         };
 
-        grunt.config('multi_lang_site_generator', {
+        grunt.config('multiLangSiteGenerator', {
             default: {
                 options: {
                     vocabs:             ['<%= config.services.default %>'],
                     vocab_directory:    'source/vocabs',
                     template_directory: 'source/tmpl/',
                     output_directory:   'content',
-                    data:               multi_lang_site_generator_data,
+                    data:               multiLangSiteGeneratorData,
                     templatetoken: {
                          evaluate:      /\{\{(.+?)\}\}/g,
                          interpolate:   /\{\{=(.+?)\}\}/g,
@@ -59,13 +63,13 @@ module.exports = function (grunt) {
                 },
                 files: projectFiles
             },
-            build_all_other_sites: {
+            buildAllOtherSites: {
                 options: {
                     vocabs:             '<%= config.services.others %>',
                     vocab_directory:    'source/vocabs',
                     template_directory: 'source/tmpl/',
                     output_directory:   'content',
-                    data:               multi_lang_site_generator_data,
+                    data:               multiLangSiteGeneratorData,
                     templatetoken: {
                          evaluate:      /\{\{(.+?)\}\}/g,
                          interpolate:   /\{\{=(.+?)\}\}/g,
@@ -76,6 +80,6 @@ module.exports = function (grunt) {
             }
         });
 
-        grunt.task.run('multi_lang_site_generator:default');
+        grunt.task.run('multiLangSiteGenerator:default');
     });
 };

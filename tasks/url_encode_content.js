@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         var htmlCount = (languageTestHtmlContents.match(/<!-- urlencodeme-start -->/g) || []).length;
 
         var a;
-        
+
         if (!htmlCount) {
             done();
         }
@@ -44,7 +44,6 @@ module.exports = function (grunt) {
         fs.writeFileSync('content/' + config.services.default + '/test.html', languageTestHtmlContents);
 
         done();
-        
     });
 
     grunt.registerTask('urlEncodeContent:languageServices', function () {
@@ -63,7 +62,7 @@ module.exports = function (grunt) {
             var htmlCount = (languageTestHtmlContents.match(/<!-- urlencodeme-start -->/g) || []).length;
 
             var a;
-            
+
             if (!htmlCount) {
                 done();
             }
@@ -91,7 +90,6 @@ module.exports = function (grunt) {
 
             fs.writeFileSync('content/' + service + '/index.inc', languageIndexIncContents);
             fs.writeFileSync('content/' + service + '/test.html', languageTestHtmlContents);
-
         });
 
         done();

@@ -1,0 +1,506 @@
+@import "news_special/defaults";
+@import "news_special/_boilerplate_utils";
+@import "news_special/_boilerplate_tags";
+@import "app";
+@import "credits-share-and-more";
+
+.ns_rtl {
+    direction: rtl;
+}
+
+.main {
+    font-size: 1.6em;
+    line-height: 1.203em;
+    .wrapper, .content, .wrapper-no-pad {
+        margin: 0 8px;
+        max-width: 1008px;
+    }
+    @media (min-width: 400px) {
+        .wrapper, .content, .wrapper-no-pad {
+            margin: 0 16px;
+        }
+    }
+    @media (min-width: 800px) {
+        .wrapper, .content, .wrapper-no-pad {
+            margin: 0 16px;
+        }
+    }
+    @media (min-width: 1008px) {
+        .wrapper, .content, .wrapper-no-pad {
+            margin: 0 auto;
+        }
+    }
+}
+.content {
+    @extend .wrapper;
+}
+
+.story {
+    @extend %column;
+    padding: 0;
+
+    @include respondMinMax (1008px, false) {
+        @include columns(8);
+        // float: left;
+    }
+}
+
+.story--wide {
+    @extend %column;
+    padding: 0;
+
+    @include respondMinMax (1008px, false) {
+        @include columns(12);
+    }
+
+    .story-body {
+        padding-right: 0;
+        max-width: 40.625em;
+        margin: 0 auto;
+    }
+}
+
+.story--full {
+    @extend %column;
+    padding: 0;
+
+    .story-body {
+        @include respondMinMax (1008px, false) {
+            @include columns(8);
+            margin: 0 auto;
+            padding-right: 0;
+        }
+    }
+}
+
+.sidebar {
+    @extend %column;
+    @include respondMinMax (1008px, false) {
+        @include columns(4);
+        float: left;
+    }
+}
+
+.story-meta-broken {
+    border-bottom: 1px solid #dcdcdc;
+    font-size: .875em;
+    line-height: 1.14286;
+    overflow: auto;
+    padding-bottom: 16px;
+    width: 100%;
+
+    .date {
+        color: #767676;
+        padding-left: 28px;
+        margin-left: -10px;
+        background-image: url("../img/boilerplate-icons-sprite.png");
+        background-repeat: no-repeat;
+        background-position: left -4011px;
+    }
+
+    a {
+        color: #cc0101;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.story-metalist {
+    float: left;
+    margin: 0 16px 0 0;
+    padding: 0;
+
+    > li {
+        border-right: 1px solid #dcdcdc;
+        display: inline-block;
+        margin-right: .2em;
+        padding-right: .5em;
+        margin-bottom: 2px;
+        margin-top: 2px;
+        white-space: nowrap;
+
+        &:last-child {
+            border-right: none;
+            margin-right: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.story-title,
+.story-body,
+.sidebar-item {
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > figure:first-child + * {
+        margin-top: 0;
+    }
+}
+
+.story-title {
+    padding-top: 1em;
+
+    @include respondMinMax (600px, false) {
+        padding-top: 1.75em;
+    }
+}
+
+.sidebar {
+    padding-top: 1.375em;
+}
+
+.story-intro {
+    padding-top: 1em;
+
+    @include respondMinMax (600px, false) {
+        padding-top: 1.75em;
+    }
+}
+
+.story-body {
+    padding-top: 1.75em;
+
+    &.mym {
+        padding-top: 0;
+        padding-bottom: 3.75em;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1rem;
+    }
+
+    @include respondMinMax (600px, false) {
+        margin-left: 8.333%;
+        margin-right: 8.333%;
+    }
+
+    @include respondMinMax (1008px, false) {
+        margin-left: 0;
+        padding-right: 8.333%;
+        margin-right: 0;
+    }
+
+    > p {
+        line-height: 1.375;
+        margin-top: 1em;
+
+        @include respondMinMax (600px, false) {
+            font-size: 1.125em;
+        }
+
+        @include respondMinMax (1008px, false) {
+            font-size: 1em;
+        }
+
+        @include respondMinMax (1280px, false) {
+            font-size: 1.125em;
+        }
+    }
+
+    > h2 {
+        font-weight: normal;
+        margin-top: 1.125rem;
+    }
+
+    > h1,
+    > h2,
+    > h3 {
+        color: #1e1e1e;
+    }
+
+    .my-manifesto & {
+        padding-top: 0;
+    }
+}
+
+.story-body--wide {
+    padding-top: 1.75em;
+
+    .issue & {
+        padding-top: .5rem;
+
+        @include respondMinMax (600px, false) {
+            padding-top: 1rem;
+        }
+    }
+}
+
+.story-body__intro {
+    font-weight: bold;
+
+    & + p {
+        margin-top: 1.4375em;
+    }
+}
+
+.story-body__crosshead,
+.sidebar__crosshead {
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: .9em;
+}
+
+.sidebar-item {
+    background: #ededed;
+    padding: 1em;
+
+    & + .sidebar-item {
+        margin-top: 1.5em;
+    }
+}
+
+.hero-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ccc;
+    background-position: left center;
+    height: 0;
+    padding-bottom: 40%;
+    position: relative;
+
+    @media (max-aspect-ratio: 1/1) {
+        padding-bottom: 67%;
+    }
+
+    @media (min-width: 320px) and (max-aspect-ratio: 8/10) {
+        padding-bottom: 100%;
+    }
+
+    @media (min-width: 480px) and (max-aspect-ratio: 1/1) {
+        padding-bottom: 67%;
+    }
+
+    @media (min-width: 600px) and (max-aspect-ratio: 1/1) {
+        background-position: center center;
+        padding-bottom: 67%;
+    }
+}
+
+.hero-wrapper {
+    height: 100%;
+    padding: 0 8px;
+    position: absolute;
+    width: 100%;
+
+    @include respondMinMax (1008px, false) {
+        left: 50%;
+        max-width: 1008px;
+        margin-left: -504px; //1008 / 2 * -1
+    }
+
+    @include respondMinMax (1280px, false) {
+        max-width: 1280px;
+        margin-left: -640px;//1280 / 2 * -1px
+    }
+}
+
+.hero-content {
+    @include clearfix();
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    left: 8px;
+    right: 8px;
+
+    @include respondMinMax (1008px, false) {
+        max-width: 992px;
+    }
+
+    @include respondMinMax (1280px, false) {
+        max-width: 1264px;
+    }
+}
+
+.hero-title {
+    @include k-columns(12);
+    @include centre-columns(12);
+
+    bottom: 0;
+    color: #fff;
+    padding: 0 0 1.25em 0;
+    position: absolute;
+    top: auto;
+    text-shadow: 0 .0625em .5em #000;
+
+    h1 {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -.03em;
+        font-weight: 700;
+
+        @include respondMinMax (20em, false) {
+            font-size: 40px;
+            line-height: 40px;
+        }
+
+        @include respondMinMax (37.5em, false) {
+            font-size: 72px;
+            line-height: 72px;
+        }
+
+        @include respondMinMax (63em, false) {
+            font-size: 56px;
+            line-height: 56px;
+        }
+    }
+
+    @include respondMinMax (37.5em, false) {
+        @include k-columns(10);
+        @include centre-columns(10);
+        padding: 0 0 2em 0;
+    }
+
+    @include respondMinMax (800px, false) {
+        @include k-columns(8);
+        @include centre-columns(8);
+        padding: 0 0 3em 0;
+    }
+
+    @include respondMinMax (1280px, false) {
+        @include k-columns(6);
+        @include centre-columns(6);
+    }
+}
+
+.hero-subtitle {
+    margin-top: .125em;
+    line-height: 1;
+
+    @include respondMinMax (20em, false) {
+        font-size: 1em;
+        line-height: 1;
+    }
+
+    @include respondMinMax (37.5em, false) {
+        font-size: 1.25em;
+    }
+
+    @include respondMinMax (63em, false) {
+        font-size: 1.25em;
+    }
+
+    @include respondMinMax (1280px, false) {
+        font-size: 1.5em;
+    }
+}
+
+.story-section:first-of-type {
+    padding-top: 1.5em;
+
+    @include respondMinMax (37.5em, false) {
+        padding-top: 2em;
+    }
+
+    @include respondMinMax (800px, false) {
+        padding-top: 3em;
+    }
+}
+
+.story-content {
+    @include k-columns(12);
+    @include centre-columns(12);
+
+    @include respondMinMax (37.5em, false) {
+        @include k-columns(10);
+        @include centre-columns(10);
+    }
+
+    @include respondMinMax (800px, false) {
+        @include k-columns(8);
+        @include centre-columns(8);
+    }
+
+    @media (min-width: 1280px) {
+        @include k-columns(6);
+        @include centre-columns(6);
+    }
+}
+
+.story-timestamp {
+
+    .story-meta {
+        overflow: visible;
+    }
+
+    body & {
+        @include k-columns(12);
+        @include centre-columns(12);
+
+        display: block;
+        font-size: .875em;
+        margin-bottom: .57143em;
+        overflow: visible;
+
+        .story-metalist {
+            float: none;
+
+            .timestamp {
+                background-image: url("../img/boilerplate-icons-sprite.png");
+                background-repeat: no-repeat;
+                background-position: -9px -4009px;
+                padding-left: 1.375em;
+            }
+        }
+
+        a {
+            color: #cc0101;
+            text-decoration: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: #333;
+            }
+        }
+
+        @include respondMinMax (37.5em, false) {
+            @include k-columns(10);
+            @include centre-columns(10);
+            margin-bottom: 1em;
+
+            .story-metalist {
+                position: relative;
+                left: -1.375em;
+            }
+        }
+
+        @include respondMinMax (800px, false) {
+            @include k-columns(8);
+            @include centre-columns(8);
+        }
+
+        @include respondMinMax (1280px, false) {
+            @include k-columns(2);
+            float: left;
+            margin-left: col-width(1);
+            margin-right: 0;
+
+            .story-meta {
+                border-right: 1px solid #dcdcdc;
+            }
+
+            .story-metalist li {
+                border: 0;
+                display: block;
+                padding-left: 1.375em;
+            }
+
+            .timestamp {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.story-body {
+    body & {
+        margin: 0;
+        padding: 0;
+    }
+}
