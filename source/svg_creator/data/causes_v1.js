@@ -1,0 +1,1 @@
+define(function() { var causes = ["Shooting", "Kidnapping - Torture - Execution", "Detention - Torture - Execution", "Detention - Torture", "Other", "Field Execution", "Detention - Execution", "Explosion", "Shelling", "Un-allowed to seek Medical help", "Kidnapping - Torture", "Kidnapping - Execution", "Warplane shelling", "Chemical and toxic gases"]; return causes; });

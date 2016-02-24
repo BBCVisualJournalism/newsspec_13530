@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="app_v6.js"></script>
+    <script type="text/javascript" src="./data/civilians_v5.js"></script>
+    <script type="text/javascript" src="./data/lib/d3.v3.js"></script>
+</head>
+
+<body>
+
+    <div class="buttonHolder">
+        <form>
+            <input type="radio" class="causeButton" value="0">Shot
+            <br />
+            <input type="radio" class="causeButton" value="1">kidnapped, tortured and executed
+            <br />
+            <input type="radio" class="causeButton" value="2">detained, tortured and executed
+            <br />
+            <input type="radio" class="causeButton" value="3">detained and tortured
+            <br />
+            <input type="radio" class="causeButton" value="4">killed - unknown
+            <br />
+            <input type="radio" class="causeButton" value="5">executed in the field
+            <br />
+            <input type="radio" class="causeButton" value="6">detained and executed
+            <br />
+            <input type="radio" class="causeButton" value="7">explosion
+            <br />
+            <input type="radio" class="causeButton" value="8">Mortar attack
+            <br />
+            <input type="radio" class="causeButton" value="9">prevented from seeking medical help
+            <br />
+            <input type="radio" class="causeButton" value="10">kidnapped, tortured and killed
+            <br />
+            <input type="radio" class="causeButton" value="11">kidnapped and executed
+            <br />
+            <input type="radio" class="causeButton" value="12">Airstrikes
+            <br />
+            <input type="radio" class="causeButton" value="13">Chemical weapons
+        </form>
+    </div>
+
+
+    <div id="canvasHolder">
+        <canvas class="shotCanvas" width="400px" height="400px"></canvas>
+        <canvas class="mortarCanvas" width="400px" height="400px"></canvas>
+        <canvas class="airstrikesCanvas" width="400px" height="400px"></canvas>
+    </div>
+
+    
+    
+    <div id="svgHolder">
+        <svg class="shotSvg" width="400px" height="400px">
+            <g class="shotCircles"></g>
+        </svg>
+        <svg class="mortarSvg" width="400px" height="400px">
+            <g class="mortarCircles"></g>
+        </svg>
+        <svg class="airstrikesSvg" width="400px" height="400px">
+            <g class="airstrikesCircles"></g>
+        </svg>
+    </div>
+
+</body>
+
+</html>
