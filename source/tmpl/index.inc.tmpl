@@ -21,8 +21,8 @@
         <div class="hero-wrapper">
             <div class="hero-content">
                 <div class="hero-title">
-                    <h1>Syria: Roll call of the dead</h1>
-                    <p class="hero-subtitle"></p>
+                    <h1>{{= hero_title }}</h1>
+                    <p class="hero-subtitle">{{= hero_subtitle }}</p>
                 </div>
             </div>
         </div>
@@ -32,39 +32,19 @@
         <div class="story-timestamp">
             <div class="story-meta">
                 <ul class="story-metalist">
-                    <li class='timestamp'><div class="date">Timestamp</div></li>
-                    <li><a href="{{ //topic_link }}">Middle East</a></li>
+                    <li class='timestamp'><div class="date">{{= timestamp }}</div></li>
+                    <li><a href="{{= topic_link }}">{{= topic_label }}</a></li>
                 </ul>
             </div>
         </div>
         <div class="story-content">
             <div class="rte story-body">
-                <p class="intro">
-                    Civil war in Syria has been raging for five years, bearing a devastating human cost that is difficult to quantify. The Violations Documentation Centre in Syria has confirmed the deaths of 91,318 civilians in the conflict so far, although this is likely to be a low estimate of the true total because many people have been killed in areas where data is impossible to corroborate.
-                </p>
+                <p class="intro">{{= section_1_intro_paragraph }}</p>
             </div>
         </div>
     </section>
 
-    <div class="ticker">
-        <div class="grid-wrapper">
-            <div class="story-content">
-                <p id="ticker_text">
-                    <strong id="ticker_name">Orwa Mohammad al-Sharef</strong><span id="ticker_genderage">, a man</span> from <span id="ticker_location">Raqqa</span>, <strong id="ticker_cause">was shot and killed</strong> on <span id="ticker_date">25 Match 2011</span>.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <section class="story-section grid-wrapper">
-        <div class="story-content">
-            <div class="rte story-body">
-                <p>
-                    If you were to read out the names of all the civilians confirmed dead by the VDC, taking on average two seconds per name, it would take <strong>more than three days</strong>. To read out the names of all the children known to have died in the conflict would take <strong>nearly nine hours</strong>.
-                </p>
-            </div>
-        </div>
-    </section>
+    {{= include("./section_death.tmpl") }}
 </div>
 {{=  include("./credits-share-and-more.tmpl") }}
 

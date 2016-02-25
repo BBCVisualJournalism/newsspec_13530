@@ -47,7 +47,7 @@ module.exports = function (grunt) {
             languageConfig:      '<%= languageConfig %>'
         };
 
-        grunt.config('multiLangSiteGenerator', {
+        grunt.config('multi_lang_site_generator', {
             default: {
                 options: {
                     vocabs:             ['<%= config.services.default %>'],
@@ -80,6 +80,6 @@ module.exports = function (grunt) {
             }
         });
 
-        grunt.task.run('multiLangSiteGenerator:default');
+        grunt.task.run('multi_lang_site_generator:default');
     });
 };

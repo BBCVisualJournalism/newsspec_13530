@@ -1,8 +1,12 @@
-.ticker {
+.death-ticker {
     background-color: #000;
-    font-size: 20px;
+    color: #fff;
+    font-size: 1.125em;
     padding: 1em 0;
     margin: 1em 0;
-    color: #fff;
-    height: 90px;
+    min-height: 124px;
+    @include respondMinMax(600px, false) {
+        min-height: 90px;
+        font-size: 1.25em;
+    }
 }

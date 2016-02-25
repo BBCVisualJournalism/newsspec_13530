@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         'default',
         'copyRequiredJs',
         'images',
-        'multiLangSiteGenerator:buildAllOtherSites',
+        'multi_lang_site_generator:buildAllOtherSites',
         'clean:inlineCss',
         'copy_source',
         'orbify:buildAllOtherSites',

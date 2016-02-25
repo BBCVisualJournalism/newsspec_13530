@@ -13,22 +13,21 @@ define(['lib/news_special/bootstrap', 'data/civilians', 'data/mapper'], function
 
     Ticker.prototype = {
         init: function () {
-            console.log('why am i being inited twice');
-            this.$ticker_text = news.$('#ticker_text');
-            this.$name = news.$('#ticker_name');
-            this.$ageGender = news.$('#ticker_agegender');
-            this.$location = news.$('#ticker_location');
-            this.$cause = news.$('#ticker_cause');
-            this.$date = news.$('#ticker_date');
+            this.$tickerText = news.$('#death-ticker-text');
+            this.$name = news.$('#death-ticker-name');
+            this.$ageGender = news.$('#death-ticker-agegender');
+            this.$location = news.$('#death-ticker-location');
+            this.$cause = news.$('#death-ticker-cause');
+            this.$date = news.$('#death-ticker-date');
 
             this.index = 0;
             this.updateText();
             var self = this;
             this.tickerInterval = setInterval(function () {
-                self.$ticker_text.fadeOut(self.fadeDuration, function () {
-                    self.$ticker_text.delay(self.hideDelay);
+                self.$tickerText.fadeOut(self.fadeDuration, function () {
+                    self.$tickerText.delay(self.hideDelay);
                     self.updateText();
-                    self.$ticker_text.fadeIn(self.fadeDuration);
+                    self.$tickerText.fadeIn(self.fadeDuration);
                 });
             }, this.showDelay);
         },

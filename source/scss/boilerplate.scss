@@ -2,6 +2,7 @@
 @import "news_special/_boilerplate_utils";
 @import "news_special/_boilerplate_tags";
 @import "app";
+@import "ticker";
 @import "credits-share-and-more";
 
 .ns_rtl {
@@ -10,7 +11,6 @@
 
 .main {
     font-size: 1.6em;
-    line-height: 1.203em;
     .wrapper, .content, .wrapper-no-pad {
         margin: 0 8px;
         max-width: 1008px;
