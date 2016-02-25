@@ -49,7 +49,7 @@
             config.paths        = {{= amdModulePaths }};
             config.paths.jquery = './lib/vendors/jquery/' + jqueryVersion;
             config.paths.app    = './app';
-            moduleToStartApp    = '{{= pathStatic }}/{{= vocab_dir }}/js/app.js';
+            moduleToStartApp    = 'app';
         }
         return {
             requireConfig: config,
