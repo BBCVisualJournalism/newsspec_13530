@@ -1,4 +1,8 @@
+$beforeColor: #8bbfbf;
+$afterColor: #007f7f;
+
 .population {
+    margin: 1em 0;
     &-figures {
         margin: 1em 0;
         background-color: #007f7f;
@@ -40,12 +44,12 @@
                 }
                 &-before {
                     &::before {
-                        background-color: #c4e0e0;
+                        background-color: $beforeColor;
                     }
                 }
                 &-after {
                     &::before {
-                        background-color: #007f7f;
+                        background-color: $afterColor;
                     }
                 }
             }
@@ -54,7 +58,7 @@
 
     &-chart {
         display: inline-block;
-        width: 48%;
+        width: 49%;
         margin: 8px 0;
         padding-top: 24px;
         position: relative;
@@ -76,8 +80,8 @@
             display: inline-block;
             position: relative;
             &-value {
-                -webkit-transition: height 1s;
-                transition: height 1s;
+                -webkit-transition: height 750ms;
+                transition: height 750ms;
                 height: 50px;
                 span {
                     display: block;
@@ -93,7 +97,7 @@
             }
             &-before {
                 .population-chart-bar-value {
-                    background-color: #c4e0e0;
+                    background-color: $beforeColor;
                     margin: 0 12px 0 4px;
                     span {
                         left: 0;
@@ -102,7 +106,7 @@
             }
             &-after {
                 .population-chart-bar-value {
-                    background-color: #007f7f;
+                    background-color: $afterColor;
                     margin: 0 4px 0 12px;
                     span {
                         right: 0
@@ -121,6 +125,79 @@
         }
         &-mob-row-3 {
             height: 171px;
+        }
+    }
+}
+
+@include respondMinMax(600px, false) {
+    .population {
+        position: relative;
+
+        &-figures {
+            background-color: transparent;
+            color: inherit;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            margin: 0;
+            text-align: left;
+            padding: 0;
+            -webkit-font-smoothing: auto;
+            -moz-osx-font-smoothing: auto;
+            &-figure {
+                font-size: 3em;
+                &-before {
+                    color: $beforeColor;
+                }
+                &-after {
+                    color: $afterColor;
+                }
+            }
+        }
+
+        &-charts {
+            .population-charts-legend {
+                display: none;
+            }
+        }
+        &-chart {
+            width: 32%;
+            &-inner {
+                width: 136px;
+                margin-left: -68px;
+            }
+            &-name {
+                margin-top: 24px;
+            }
+            &-bar {
+                width: 68px;
+                .population-chart-bar-value {
+                    margin: 0 8px;
+                    span {
+                        width: 100%;
+                    }
+                }
+                &-label {
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    bottom: -24px;
+                    text-align: center;
+                }
+            }
+            &-mob-row-1, &-mob-row-2, &-mob-row-3 {
+                height: auto;
+            }
+            &-mob-row-2 .population-chart-name {
+                height: auto;
+            }
+            &-dt-row-1 {
+                height: 528px;
+            }
+            &-dt-row-2 {
+                height: 239px;
+            }
         }
     }
 }

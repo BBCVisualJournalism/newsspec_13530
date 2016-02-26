@@ -1,24 +1,31 @@
-define(['lib/news_special/bootstrap'], function (news) {
+define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
+
+    // @param $populationChart - a jquery object of a single element of the class 'population-chart'
     var PopulationChart = function ($populationChart) {
         this.$chart = $populationChart;
-        this.init();
-    };
-
-    PopulationChart.prototype.init = function () {
         this.$beforeBar = this.$chart.find('.population-chart-bar-before .population-chart-bar-value');
-        var beforeBarValue = this.$beforeBar.attr('data-population-value');
-        var beforeBarHeight = (beforeBarValue * 100) / 2;
-
         this.$afterBar = this.$chart.find('.population-chart-bar-after .population-chart-bar-value');
-        var afterBarValue = this.$afterBar.attr('data-population-value');
-        var afterBarHeight = (afterBarValue * 100) / 2;
-        
-        updateBarHeight(this.$beforeBar, beforeBarHeight);
-        updateBarHeight(this.$afterBar, afterBarHeight);
+
+        this.updateBars();
+
+        $(window).on('resize', this.updateBars.bind(this));
     };
 
-    var updateBarHeight = function ($bar, height) {
-        $bar.css('height', height + 'px');
+    var calcBarHeight = function ($bar) {
+        var barHeightMultiplier = utils.isMobile() ? 0.5 : 0.75;
+        var barValue = $bar.attr('data-population-value');
+        var barHeight = (barValue * 100) * barHeightMultiplier;
+        return barHeight;
+    };
+
+    var updateBarHeight = function ($bar) {
+        var barHeight = calcBarHeight($bar);
+        $bar.css('height', barHeight + 'px');
+    };
+
+    PopulationChart.prototype.updateBars = function () {
+        updateBarHeight(this.$beforeBar);
+        updateBarHeight(this.$afterBar);
     };
 
     return PopulationChart;
