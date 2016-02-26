@@ -38,7 +38,7 @@ module.exports = function (grunt) {
     grunt.registerTask('lang_font:default', function () {
         var service = grunt.config.get('config').services.default,
             fontstackStr = fontsLookup[service],
-            outputCssFilePaths = ['content/' + service + '/css/main.css', 'content/' + service + '/css/legacy-ie.css']
+            outputCssFilePaths = ['content/' + service + '/css/boilerplate.css', 'content/' + service + '/css/legacy-ie.css']
             cssToPrependStr = grunt.file.read('source/scss/news_special/fonts/' + fontstackStr + '_fonts.css'),
             sourceCssStr = null;
 
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
             var fontstackStr = fontsLookup[service];
 
             if (fontstackStr) {
-                var outputCssFilePaths = ['content/' + service + '/css/main.css', 'content/' + service + '/css/legacy-ie.css'],
+                var outputCssFilePaths = ['content/' + service + '/css/boilerplate.css', 'content/' + service + '/css/legacy-ie.css'],
                     cssToPrependStr = grunt.file.read('source/scss/news_special/fonts/' + fontstackStr + '_fonts.css'),
                     sourceCssStr;
 
