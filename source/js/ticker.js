@@ -1,4 +1,4 @@
-define(['lib/news_special/bootstrap', 'data/civilians', 'data/mapper'], function (news, civilians, mapper) {
+define(['lib/news_special/bootstrap', 'data/children', 'data/mapper'], function (news, children, mapper) {
     
     // @param showDelay - how long to show the text for
     // @param hideDelay - how long to hide the text for
@@ -55,8 +55,8 @@ define(['lib/news_special/bootstrap', 'data/civilians', 'data/mapper'], function
         },
 
         getNextCivilian: function () {
-            if (this.index <= civilians.length) {
-                var civilian = civilians[this.index];
+            if (this.index <= children.length) {
+                var civilian = children[this.index];
                 this.index++;
                 return civilian;
             } else {
