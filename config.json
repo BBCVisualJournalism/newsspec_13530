@@ -1,5 +1,5 @@
 {
-  "debug":          "true",
+  "debug":          "false",
   "whichEnv":       "local",
   "scaffoldLite":   "false",
   "project_number": "13530",
