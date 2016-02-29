@@ -1,0 +1,84 @@
+.priceoffood {
+    line-height: 1.5;
+
+    &-fooditem {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        .priceoffood-fooditem-name {
+            font-size: inherit;
+            margin: 1em 0;
+            text-align: center;
+        }
+    }
+    &-area {
+        border-bottom: 1px solid #dcdcdc;
+        padding: 0.5em;
+        &-3 {
+            border-bottom: none;
+        }
+        &-name {
+            display: block;
+            color: #007f7f;
+            font-weight: bold;
+            opacity: 0;
+            width: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        &-price {
+            height: 1.5em;
+        }
+    }
+    &-show-area-name-mob .priceoffood-area-name {
+        opacity: 1;
+        width: auto;
+        white-space: normal;
+        overflow: visible;
+    }
+}
+
+@include respondMinMax(600px, false) {
+    .priceoffood {
+        width: 70%;
+        float: right;
+
+        &-fooditem {
+            width: 33%;
+        }
+
+        &-area {
+            position: relative;
+            &-name {
+                position: absolute;
+                top: 0;
+                left: -128.5714287%;
+                text-align: right;
+                border-bottom: 1px solid #dcdcdc;
+                padding: 0.5em 0;
+            }
+            &-3 {
+                .priceoffood-area-name {
+                    border-bottom: none;
+                }
+            }
+            &-price {
+                text-align: center;
+            }
+        }
+
+        &-show-area-name-mob  .priceoffood-area-name {
+            opacity: 0;
+            width: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &-show-area-name-dt .priceoffood-area-name {
+            opacity: 1;
+            width: 128.5714287%;
+            white-space: normal;
+            overflow: visible;
+        }
+    }
+}
