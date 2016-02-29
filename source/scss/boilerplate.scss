@@ -189,6 +189,7 @@
     > p {
         line-height: 1.375;
         margin-top: 1em;
+        margin-bottom: 1em;
 
         @include respondMinMax (600px, false) {
             font-size: 1.125em;
