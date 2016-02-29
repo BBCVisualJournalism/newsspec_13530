@@ -29,13 +29,13 @@
     </section>
 
     <section class="story-section grid-wrapper">
-        <div class="story-timestamp">
-            <div class="story-meta">
-                <ul class="story-metalist">
-                    <li class='timestamp'><div class="date">{{= timestamp }}</div></li>
-                    <li><a href="{{= topic_link }}">{{= topic_label }}</a></li>
-                </ul>
-            </div>
+        <div class="story-meta">
+            <ul class="story-meta-list">
+                <li class="story-meta-list-item story-meta-list-item-timestamp">
+                    <time class="date" datetime="2016-03-15">{{= timestamp }}</time>
+                </li>
+                <li class="story-meta-list-item story-meta-list-item-topic"><a href="{{= topic_link }}">{{= topic_label }}</a></li>
+            </ul>
         </div>
         <div class="story-content">
             <div class="rte story-body">

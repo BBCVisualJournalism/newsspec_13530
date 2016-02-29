@@ -425,78 +425,72 @@
     }
 }
 
-.story-timestamp {
-
-    .story-meta {
-        overflow: visible;
+.story-meta {
+    display: block;
+    font-size: .875em;
+    @include k-columns(12);
+    @include centre-columns(12);
+    &-list {
+        margin: 0 0 1em;
+        padding: 0;
+        &-item {
+            border-right: 1px solid #dcdcdc;
+            display: inline-block;
+            margin-right: .2em;
+            padding-right: .5em;
+            margin-bottom: 2px;
+            margin-top: 2px;
+            white-space: nowrap;
+            position: relative;
+            &:last-child {
+                border: none;
+                margin-right: 0;
+                padding-right: 0;
+            }
+            &-timestamp {
+                &::before {
+                    content: '';
+                    display: block;
+                    background: url('../img/boilerplate-icons-sprite.png') no-repeat -10px -4012px;
+                    width: 13px;
+                    height: 13px;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                }
+                padding-left: 1.375em;
+            }
+            &-topic a {
+                color: #cc0101;
+                text-decoration: none;
+                border: none;
+                &:active, &:focus, &:hover {
+                    color: #333;
+                }
+            }
+        }
     }
 
-    body & {
-        @include k-columns(12);
-        @include centre-columns(12);
+    @include respondMinMax (37.5em, false) {
+        @include k-columns(10);
+        @include centre-columns(10);
+    }
 
-        display: block;
-        font-size: .875em;
-        margin-bottom: .57143em;
-        overflow: visible;
+    @include respondMinMax (800px, false) {
+        @include k-columns(8);
+        @include centre-columns(8);
+    }
 
-        .story-metalist {
-            float: none;
-
-            .timestamp {
-                background-image: url("../img/boilerplate-icons-sprite.png");
-                background-repeat: no-repeat;
-                background-position: -9px -4009px;
-                padding-left: 1.375em;
-            }
-        }
-
-        a {
-            color: #cc0101;
-            text-decoration: none;
-
-            &:hover,
-            &:active,
-            &:focus {
-                color: #333;
-            }
-        }
-
-        @include respondMinMax (37.5em, false) {
-            @include k-columns(10);
-            @include centre-columns(10);
-            margin-bottom: 1em;
-
-            .story-metalist {
-                position: relative;
-                left: -1.375em;
-            }
-        }
-
-        @include respondMinMax (800px, false) {
-            @include k-columns(8);
-            @include centre-columns(8);
-        }
-
-        @include respondMinMax (1280px, false) {
-            @include k-columns(2);
-            float: left;
-            margin-left: col-width(1);
-            margin-right: 0;
-
-            .story-meta {
-                border-right: 1px solid #dcdcdc;
-            }
-
-            .story-metalist li {
-                border: 0;
-                display: block;
-                padding-left: 1.375em;
-            }
-
-            .timestamp {
-                padding-left: 0;
-            }
+    @include respondMinMax (1280px, false) {
+        @include k-columns(2);
+        float: left;
+        margin-left: col-width(1);
+        margin-right: 0;
+        border-right: 1px solid #dcdcdc;
+        &-list-item {
+            border: 0;
+            display: block;
+            padding-left: 1.375em;
         }
     }
 }
