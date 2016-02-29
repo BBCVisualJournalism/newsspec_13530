@@ -79,6 +79,7 @@ $afterColor: #007f7f;
             width: 44px;
             display: inline-block;
             position: relative;
+            vertical-align: bottom;
             &-value {
                 -webkit-transition: height 750ms;
                 transition: height 750ms;
