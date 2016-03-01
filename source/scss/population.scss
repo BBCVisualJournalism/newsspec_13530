@@ -125,7 +125,7 @@ $afterColor: #007f7f;
             }
         }
         &-mob-row-3 {
-            height: 171px;
+            height: 166px;
         }
     }
 }
@@ -194,10 +194,13 @@ $afterColor: #007f7f;
                 height: auto;
             }
             &-dt-row-1 {
-                height: 528px;
+                height: 547px;
+                .population-chart-name {
+                    height: 40px;
+                }
             }
             &-dt-row-2 {
-                height: 239px;
+                height: 235px;
             }
         }
     }
