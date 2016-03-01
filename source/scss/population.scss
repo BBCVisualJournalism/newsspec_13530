@@ -128,6 +128,13 @@ $afterColor: #007f7f;
             height: 166px;
         }
     }
+
+    .ns_rtl & {
+        direction: ltr;
+        &-figures {
+            direction: rtl;
+        }
+    }
 }
 
 @include respondMinMax(600px, false) {

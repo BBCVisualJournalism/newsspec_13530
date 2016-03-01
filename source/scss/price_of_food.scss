@@ -80,6 +80,17 @@
             white-space: normal;
             overflow: visible;
         }
+
+        .ns_rtl & {
+            float: left;
+            &-area {
+                &-name {
+                    left: auto;
+                    right: -128.5714287%;
+                    text-align: left;
+                }
+            }
+        }
     }
 }
 

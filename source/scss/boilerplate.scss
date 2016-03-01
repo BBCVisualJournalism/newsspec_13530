@@ -433,7 +433,7 @@
     @include k-columns(12);
     @include centre-columns(12);
     &-list {
-        margin: 0 0 1em;
+        margin: 0 0 1.5em;
         padding: 0;
         &-item {
             border-right: 1px solid #dcdcdc;
@@ -470,6 +470,24 @@
                     color: #333;
                 }
             }
+            .ns_rtl & {
+                border-right: none;
+                border-left: 1px solid #dcdcdc;
+                margin-right: 0;
+                margin-left: .2em;
+                padding-right: 0;
+                padding-left: .5em;
+                &:last-child {
+                    border: none;
+                }
+                &-timestamp {
+                    padding-right: 1.375em;
+                    &::before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
         }
     }
 
@@ -489,10 +507,25 @@
         margin-left: col-width(1);
         margin-right: 0;
         border-right: 1px solid #dcdcdc;
-        &-list-item {
-            border: 0;
-            display: block;
-            padding-left: 1.375em;
+        &-list {
+            margin: 0;
+            &-item {
+                border: none;
+                display: block;
+                padding-left: 1.375em;
+            }
+        }
+
+        .ns_rtl & {
+            float: right;
+            margin-left: 0;
+            margin-right: col-width(1);
+            border-right: none;
+            border-left: 1px solid #dcdcdc;
+            &-list-item {
+                border: none;
+                padding-right: 1.375em;
+            }
         }
     }
 }
