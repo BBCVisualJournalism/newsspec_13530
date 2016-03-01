@@ -16,34 +16,7 @@
 <div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }}">
     <div id="loading-spinner" class="bbc-news-visual-journalism-loading-spinner"></div>
     <div class="tempShareToolsHolder"></div>
-
-    <section class="hero-image" style="background-image: url(http://placehold.it/1920x768);">
-        <div class="hero-wrapper">
-            <div class="hero-content">
-                <div class="hero-title">
-                    <h1>{{= hero_title }}</h1>
-                    <p class="hero-subtitle">{{= hero_subtitle }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section grid-wrapper">
-        <div class="story-meta">
-            <ul class="story-meta-list">
-                <li class="story-meta-list-item story-meta-list-item-timestamp">
-                    <time class="date" datetime="2016-03-15">{{= timestamp }}</time>
-                </li>
-                <li class="story-meta-list-item story-meta-list-item-topic"><a href="{{= topic_link }}">{{= topic_label }}</a></li>
-            </ul>
-        </div>
-        <div class="story-content">
-            <div class="rte story-body">
-                <p class="intro">{{= intro_paragraph }}</p>
-            </div>
-        </div>
-    </section>
-
+    {{= include("./hero_intro.tmpl") }}
     {{= include("./section_1_death.tmpl") }}
     {{= include("./section_2_population.tmpl") }}
     {{= include("./section_3.tmpl") }}

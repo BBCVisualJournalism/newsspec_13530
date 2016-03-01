@@ -1,0 +1,35 @@
+<section class="hero-image">
+    <div class="hero-video-container">
+        <div class="story-media-video"></div>
+        <div class="hero-wrapper">
+            <div class="video-audio-control video-overlay-hidden" data-label-on="{{= audio_control_label_on }}" data-label-off="{{= audio_control_label_off }}">
+                <button class="video-audio-control-button"></button>
+                <div class="video-audio-control-label">{{= audio_control_label_off }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <div class="hero-title">
+                <h1>{{= hero_title }}</h1>
+                <p class="hero-subtitle">{{= hero_subtitle }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="story-section grid-wrapper">
+    <div class="story-meta">
+        <ul class="story-meta-list">
+            <li class="story-meta-list-item story-meta-list-item-timestamp">
+                <time class="date" datetime="2016-03-15">{{= timestamp }}</time>
+            </li>
+            <li class="story-meta-list-item story-meta-list-item-topic"><a href="{{= topic_link }}">{{= topic_label }}</a></li>
+        </ul>
+    </div>
+    <div class="story-content">
+        <div class="rte story-body">
+            <p class="intro">{{= intro_paragraph }}</p>
+        </div>
+    </div>
+</section>

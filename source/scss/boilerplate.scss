@@ -2,6 +2,7 @@
 @import "news_special/_boilerplate_utils";
 @import "news_special/_boilerplate_tags";
 @import "app";
+@import "hero_video";
 @import "ticker";
 @import "population";
 @import "price_of_food";
@@ -310,6 +311,7 @@
     position: absolute;
     left: 8px;
     right: 8px;
+    z-index: 1;
 
     @include respondMinMax (1008px, false) {
         max-width: 992px;

@@ -6,7 +6,8 @@ module.exports = function (grunt) {
     // *************************************************************************
 
     var amdModulePaths = {
-        'pubsub': './lib/vendors/jquery/pubsub'
+        'pubsub': './lib/vendors/jquery/pubsub',
+        'bump-3': 'empty:'
     };
 
     // *************************************************************************
@@ -35,7 +36,7 @@ module.exports = function (grunt) {
             baseUrl: './source/js',
             paths: requirePathsForJquery2build,
             optimize: 'uglify2',
-            generateSourceMaps: false,
+            generateSourceMaps: true,
             preserveLicenseComments: false,
             name: './app',
             out: './content/<%= config.services.default %>/js/all-html5.js'

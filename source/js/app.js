@@ -1,5 +1,13 @@
-define(['lib/news_special/bootstrap', 'ticker', 'population_chart'], function (news, Ticker, PopulationChart) {
+define(['lib/news_special/bootstrap', 'video', 'ticker', 'population_chart'], function (news, Video, Ticker, PopulationChart) {
     $.emit('init_images');
+
+    var heroVideo = new Video({
+        selector: '.hero-video-container',
+        vpid: 'p03knd3c',
+        // holdingImage: '',
+        product: 'background',
+        autoplay: 'true'
+    });
 
     var ticker = new Ticker(3500, 400, 500);
 
