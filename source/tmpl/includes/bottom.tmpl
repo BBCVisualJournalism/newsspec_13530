@@ -69,20 +69,20 @@
     })
 })();
  </script>   
-        <script type="text/javascript" src="//mybbc.files.bbci.co.uk/s/notification-ui/1.4.0/js/notifications.js"></script>
+        <script type="text/javascript" src="//mybbc.files.bbci.co.uk/s/notification-ui/1.4.1/js/notifications.js"></script>
 
     <script type="text/javascript">
 
         require.config({
             paths: {
-                "mybbc/templates": '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.0/templates',
-                "mybbc/notifications": '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.0/js'
+                "mybbc/templates": '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.1/templates',
+                "mybbc/notifications": '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.1/js'
             }
         });
 
         require(['mybbc/notifications/NotificationsMain', 'idcta/idcta-1'], function(NotificationsMain, idcta) {
             if (window.orb.fig.geo.isUK()) {
-                NotificationsMain.run(idcta, '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.0/');
+                NotificationsMain.run(idcta, '//mybbc.files.bbci.co.uk/s/notification-ui/1.4.1/');
             }
         });
     </script>

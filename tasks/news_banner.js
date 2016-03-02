@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 
             var languageCode = languageConfig.languageLookup[service].code || 'en-GB';
 
-            fs.writeFileSync('source/tmpl/includes/news_banner_' + languageCode + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
+            fs.writeFileSync('source/tmpl/includes/news-banner-' + languageCode + '.tmpl', newsHeaderStyleStr + newsHeaderStr);
         });
 
         done();
@@ -88,11 +88,11 @@ module.exports = function (grunt) {
 
         var defaultLanguage = languageConfig.languageLookup[config.services.default].code || 'en-GB';
 
-        var defaultBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + defaultLanguage + '.tmpl', 'utf8');
+        var defaultBannerMarkup = fs.readFileSync('source/tmpl/includes/news-banner-' + defaultLanguage + '.tmpl', 'utf8');
 
         services.forEach(function (service) {
             
-            var languageBannerMarkup = fs.readFileSync('source/tmpl/includes/news_banner_' + languageConfig.languageLookup[service].code + '.tmpl', 'utf8');
+            var languageBannerMarkup = fs.readFileSync('source/tmpl/includes/news-banner-' + languageConfig.languageLookup[service].code + '.tmpl', 'utf8');
 
             var languageIndexIncContents = fs.readFileSync('content/' + service + '/index.inc', 'utf8');
             var languageTestHtmlContents = fs.readFileSync('content/' + service + '/test.html', 'utf8');

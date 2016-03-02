@@ -5,7 +5,7 @@
     "url": "http://github.com/BBCVisualJournalism/newsspec_13530"
   },
   "description":    "GD Syria 5th Anniversary",
-  "version":        "0.1.33",
+  "version":        "0.2.0",
   "devDependencies": {
     "casperjs":                         "1.1.0-beta3",
     "grunt":                            "~0.4.0",

@@ -11,6 +11,7 @@ module.exports = function (grunt) {
         'copy_source',
         'orbify:buildAllOtherSites',
         'newsBanner:replaceLanguageNewsBanners',
+        'lang_font:others',
         'urlEncodeContent:languageServices'
     ]);
 };
