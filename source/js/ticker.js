@@ -15,8 +15,8 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
     Ticker.prototype = {
         init: function () {
             this.$tickerText = news.$('#death-ticker-text');
-            this.tickerSentence = this.$tickerText.attr('data-ticker-sentence');
-            this.tickerSentenceUnidentified = this.$tickerText.attr('data-ticker-sentence-unidentified');
+            this.tickerTextStructure = this.$tickerText.attr('data-ticker-sentence');
+            this.tickerTextStructureAlt = this.$tickerText.attr('data-ticker-sentence-alt');
             this.locale = news.$('.main').attr('data-locale');
 
             this.index = 0;
@@ -37,7 +37,6 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
 
         updateText: function (civilianData) {
             var civilian = this.getNextCivilian(civilianData);
-            console.log(civilian);
             var dataLanguage = this.locale === 'ar' ? 'arabic' : 'english';
             var languageSpecificMapper = mapper[dataLanguage];
             var name = civilian[mapper.columns.name];
@@ -47,14 +46,23 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
             var date = this.locale === 'en-GB' ? this.makeDate(civilian[mapper.columns.date]) : civilian[mapper.columns.date];
 
             var tickerHtml;
-            if (name.match(/unidentified/i) || name.match(/ of /i) || name.match(/family/i)) {
-                tickerHtml = this.tickerSentenceUnidentified;
+            if (this.locale === 'ar') {
+                if (civilian[mapper.columns.cause] === 6) {
+                    tickerHtml = this.tickerTextStructureAlt;
+                } else {
+                    tickerHtml = this.tickerTextStructure.replace('{{cause}}', '<strong>' + cause + '</strong>');
+                }
+                tickerHtml = tickerHtml.replace('{{name}}', '<strong>' + name + '</strong>');
             } else {
-                tickerHtml = this.tickerSentence.replace('{{name}}', '<strong>' + name + '</strong>');
+                if (name.match(/unidentified/i) || name.match(/ of /i) || name.match(/family/i)) {
+                    tickerHtml = this.tickerTextStructureAlt;
+                } else {
+                    tickerHtml = this.tickerTextStructure.replace('{{name}}', '<strong>' + name + '</strong>');
+                }
+                tickerHtml = tickerHtml.replace('{{cause}}', '<strong>' + cause + '</strong>');
             }
             tickerHtml = tickerHtml.replace('{{ageGender}}', ageGender)
                 .replace('{{location}}', location)
-                .replace('{{cause}}', '<strong>' + cause + '</strong>')
                 .replace('{{date}}', date);
             this.$tickerText.html(tickerHtml);
         },
