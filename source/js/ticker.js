@@ -44,7 +44,7 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
             var ageGender = languageSpecificMapper.ageGender[civilian[mapper.columns.ageGender]];
             var location = languageSpecificMapper.locations[civilian[mapper.columns.location]];
             var cause = languageSpecificMapper.causes[civilian[mapper.columns.cause]];
-            var date = this.makeDate(civilian[mapper.columns.date]);
+            var date = this.locale === 'en-GB' ? this.makeDate(civilian[mapper.columns.date]) : civilian[mapper.columns.date];
 
             var tickerHtml;
             if (name.match(/unidentified/i) || name.match(/ of /i) || name.match(/family/i)) {
@@ -75,7 +75,8 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
         makeDate: function (dateString) {
             var dateArray = dateString.split('/');
             var date = new Date(dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0]);
-            return date.toLocaleString(this.locale, { month: 'long', day: 'numeric', year: 'numeric' });
+            var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            return date.getUTCDate() + ' ' + monthNames[date.getUTCMonth()] + ' ' + date.getUTCFullYear();
         }
     };
 
