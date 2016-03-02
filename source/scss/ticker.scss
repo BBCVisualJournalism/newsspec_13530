@@ -17,3 +17,13 @@
         font-size: 1.25em;
     }
 }
+.story-body .death-ticker-explainer {
+    font-weight: bold;
+    font-size: 1.125em;
+    &-hours {
+        color: #c00;
+    }
+    @include respondMinMax(600px, false) {
+        font-size: 1.25em;
+    }
+}
