@@ -33,6 +33,16 @@ define([
             new PopulationChart(news.$('#population-chart-city-5')),
             new PopulationChart(news.$('#population-chart-city-6'))
         ];
+        
+        function animateCharts() {
+            setTimeout(function () {
+                for (var i = 0; i < populationCharts.length; i++) {
+                    populationCharts[i].updateBars();
+                }
+            }, 500);
+        }
+
+        news.pubsub.on('section-population-reached', animateCharts);
     }
 
     init();

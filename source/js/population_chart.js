@@ -22,7 +22,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         init: function () {
             this.$beforeBar = this.$chart.find('.population-chart-bar-before .population-chart-bar-value');
             this.$afterBar = this.$chart.find('.population-chart-bar-after .population-chart-bar-value');
-            this.updateBars();
+
             $(window).on('resize', this.updateBars.bind(this));
         },
 
