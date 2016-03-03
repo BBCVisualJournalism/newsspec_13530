@@ -8,7 +8,6 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
         this.showDelay = showDelay || 3000;
         this.hideDelay = hideDelay || 500;
         this.fadeDuration = fadeDuration || 400;
-        this.dataPath = 'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13530/data/';
         this.init();
     };
 
@@ -21,50 +20,67 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
 
             this.index = 0;
 
+            var dataPath;
+            var dataFile;
+            var isSimpleData = true;
+
+            if (this.locale === 'en-GB' || this.locale === 'ar') {
+                isSimpleData = false;
+                dataPath = 'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13530/data/';
+                dataFile = this.locale === 'ar' ? 'arabic.js' : 'english.js';
+            } else {
+                dataPath = '../data/';
+                dataFile = 'ticker_data';
+            }
+
             var self = this;
-            var dataFile = this.locale === 'ar' ? 'arabic/children.js' : 'english/children.js';
-            require([this.dataPath + dataFile], function (civilianData) {
-                self.updateText(civilianData);
+            require([dataPath + dataFile], function (civilianData) {
+                self.updateText(civilianData, isSimpleData);
                 self.tickerInterval = setInterval(function () {
                     self.$tickerText.fadeOut(self.fadeDuration, function () {
                         self.$tickerText.delay(self.hideDelay);
-                        self.updateText(civilianData);
+                        self.updateText(civilianData, isSimpleData);
                         self.$tickerText.fadeIn(self.fadeDuration);
                     });
                 }, self.showDelay);
             });
         },
 
-        updateText: function (civilianData) {
+        updateText: function (civilianData, isSimpleData) {
             var civilian = this.getNextCivilian(civilianData);
-            var dataLanguage = this.locale === 'ar' ? 'arabic' : 'english';
-            var languageSpecificMapper = mapper[dataLanguage];
-            var name = civilian[mapper.columns.name];
-            var ageGender = languageSpecificMapper.ageGender[civilian[mapper.columns.ageGender]];
-            var location = languageSpecificMapper.locations[civilian[mapper.columns.location]];
-            var cause = languageSpecificMapper.causes[civilian[mapper.columns.cause]];
-            var date = this.locale === 'en-GB' ? this.makeDate(civilian[mapper.columns.date]) : civilian[mapper.columns.date];
-
-            var tickerHtml;
-            if (this.locale === 'ar') {
-                if (civilian[mapper.columns.cause] === 6) {
-                    tickerHtml = this.tickerTextStructureAlt;
-                } else {
-                    tickerHtml = this.tickerTextStructure.replace('{{cause}}', '<strong>' + cause + '</strong>');
-                }
-                tickerHtml = tickerHtml.replace('{{name}}', '<strong>' + name + '</strong>');
+            if (isSimpleData) {
+                this.$tickerText.text(civilian);
             } else {
-                if (name.match(/unidentified/i) || name.match(/ of /i) || name.match(/family/i)) {
-                    tickerHtml = this.tickerTextStructureAlt;
+                var dataLanguage = this.locale === 'ar' ? 'arabic' : 'english';
+                var languageSpecificMapper = mapper[dataLanguage];
+                var name = civilian[mapper.columns.name];
+                var ageGender = languageSpecificMapper.ageGender[civilian[mapper.columns.ageGender]];
+                var location = languageSpecificMapper.locations[civilian[mapper.columns.location]];
+                var cause = languageSpecificMapper.causes[civilian[mapper.columns.cause]];
+                var date = this.locale === 'en-GB' ? this.makeDate(civilian[mapper.columns.date]) : civilian[mapper.columns.date];
+
+                var tickerHtml;
+                if (this.locale === 'ar') {
+                    if (civilian[mapper.columns.cause] === 6) {
+                        tickerHtml = this.tickerTextStructureAlt;
+                    } else {
+                        tickerHtml = this.tickerTextStructure.replace('{{cause}}', '<strong>' + cause + '</strong>');
+                    }
+                    tickerHtml = tickerHtml.replace('{{name}}', '<strong>' + name + '</strong>');
                 } else {
-                    tickerHtml = this.tickerTextStructure.replace('{{name}}', '<strong>' + name + '</strong>');
+                    if (name.match(/unidentified/i) || name.match(/ of /i) || name.match(/family/i)) {
+                        tickerHtml = this.tickerTextStructureAlt;
+                    } else {
+                        tickerHtml = this.tickerTextStructure.replace('{{name}}', '<strong>' + name + '</strong>');
+                    }
+                    tickerHtml = tickerHtml.replace('{{cause}}', '<strong>' + cause + '</strong>');
                 }
-                tickerHtml = tickerHtml.replace('{{cause}}', '<strong>' + cause + '</strong>');
+                tickerHtml = tickerHtml
+                    .replace('{{ageGender}}', ageGender)
+                    .replace('{{location}}', location)
+                    .replace('{{date}}', date);
+                this.$tickerText.html(tickerHtml);
             }
-            tickerHtml = tickerHtml.replace('{{ageGender}}', ageGender)
-                .replace('{{location}}', location)
-                .replace('{{date}}', date);
-            this.$tickerText.html(tickerHtml);
         },
 
         getNextCivilian: function (civilianData) {
@@ -74,7 +90,7 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
                 return civilian;
             } else {
                 this.index = 0;
-                return this.getNextItem();
+                return this.getNextCivilian(civilianData);
             }
         },
 

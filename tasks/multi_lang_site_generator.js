@@ -7,12 +7,14 @@ module.exports = function (grunt) {
 
     var projectFiles = {
         'test.html': 'test.html.tmpl',
-        'index.inc':  'index.inc.tmpl',
+        'index.inc': 'index.inc.tmpl',
 
         'test-boilerplate.html': 'test-boilerplate.html.tmpl',
-        'boilerplate.inc':  'boilerplate.inc.tmpl',
+        'boilerplate.inc': 'boilerplate.inc.tmpl',
         
-        'head_meta.inc':  'head_meta.inc.tmpl'
+        'head_meta.inc': 'head_meta.inc.tmpl',
+
+        'data/ticker_data.js': 'ticker_data.js.tmpl'
     };
 
     // *************************************************************************
