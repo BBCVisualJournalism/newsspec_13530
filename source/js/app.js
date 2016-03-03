@@ -1,30 +1,40 @@
 define([
     'lib/news_special/bootstrap',
-    'optimisedScroll',
+    'utils',
+    'optimised_scroll',
+    'scroll_handler',
     'video',
     'ticker',
     'population_chart'
-], function (news, OptimisedScroll, Video, Ticker, PopulationChart) {
+], function (news, utils, OptimisedScroll, scrollHandler, Video, Ticker, PopulationChart) {
     $.emit('init_images');
 
-    new OptimisedScroll();
+    function init() {
+        new OptimisedScroll();
+        scrollHandler.init();
+        new Video({
+            selector: '.hero-video-container',
+            vpid: 'p03knd3c',
+            // holdingImage: '',
+            product: 'background',
+            autoplay: 'true'
+        });
+        new Ticker(3500, 400, 500);
+        initPopulationCharts();
+    }
 
-    var heroVideo = new Video({
-        selector: '.hero-video-container',
-        vpid: 'p03knd3c',
-        // holdingImage: '',
-        product: 'background',
-        autoplay: 'true'
-    });
+    var populationChartsPassed = false;
+    function initPopulationCharts() {
+        var populationCharts = [
+            new PopulationChart(news.$('#population-chart-city-1')),
+            new PopulationChart(news.$('#population-chart-city-2')),
+            new PopulationChart(news.$('#population-chart-city-3')),
+            new PopulationChart(news.$('#population-chart-city-4')),
+            new PopulationChart(news.$('#population-chart-city-5')),
+            new PopulationChart(news.$('#population-chart-city-6'))
+        ];
+    }
 
-    var ticker = new Ticker(3500, 400, 500);
-
-    var populationChart_city1 = new PopulationChart(news.$('#population-chart-city-1'));
-    var populationChart_city2 = new PopulationChart(news.$('#population-chart-city-2'));
-    var populationChart_city3 = new PopulationChart(news.$('#population-chart-city-3'));
-    var populationChart_city4 = new PopulationChart(news.$('#population-chart-city-4'));
-    var populationChart_city5 = new PopulationChart(news.$('#population-chart-city-5'));
-    var populationChart_city6 = new PopulationChart(news.$('#population-chart-city-6'));
-
+    init();
     news.sendMessageToremoveLoadingImage();
 });
