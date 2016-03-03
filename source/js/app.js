@@ -1,5 +1,13 @@
-define(['lib/news_special/bootstrap', 'video', 'ticker', 'population_chart'], function (news, Video, Ticker, PopulationChart) {
+define([
+    'lib/news_special/bootstrap',
+    'optimisedScroll',
+    'video',
+    'ticker',
+    'population_chart'
+], function (news, OptimisedScroll, Video, Ticker, PopulationChart) {
     $.emit('init_images');
+
+    new OptimisedScroll();
 
     var heroVideo = new Video({
         selector: '.hero-video-container',
