@@ -20,6 +20,7 @@ define([
             autoplay: 'true'
         });
         new Ticker(3500, 400, 500);
+        sameHeight(news.$('.threestages-chart-paragraph'));
         initPopulationCharts();
     }
 
@@ -43,6 +44,18 @@ define([
         }
 
         news.pubsub.on('section-population-reached', animateCharts);
+    }
+
+    function sameHeight($elements) {
+        var maxHeight = -1;
+        $elements
+            .each(function () {
+                var elementHeight = $(this).height();
+                if (elementHeight > maxHeight) {
+                    maxHeight = elementHeight;
+                }
+            })
+            .height(maxHeight);
     }
 
     init();

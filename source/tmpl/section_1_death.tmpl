@@ -8,19 +8,78 @@
         </div>
     </div>
     <div class="death-ticker">
-        <div class="story-content">
-            <p id="death-ticker-text" data-ticker-sentence="{{= death_ticker_text }}" data-ticker-sentence-alt="{{= death_ticker_text_alt }}"></p>
+        <div class="death-ticker-inner">
+            <p class="death-ticker-text" id="death-ticker-text" data-ticker-sentence="{{= ticker_text }}" data-ticker-sentence-alt="{{= ticker_text_alt }}"></p>
         </div>
     </div>
     <div class="grid-wrapper">
         <div class="story-content">
             <div class="story-body rte">
                 <p class="death-ticker-explainer">
-                    {{= section_1_ticker_para_p1 }}
-                    <strong class="death-ticker-explainer-hours">{{= section_1_ticker_para_p2_hours }}</strong>
-                    {{= section_1_ticker_para_p3 }}
+                    {{= ticker_para_part1 }}
+                    <strong class="death-ticker-explainer-hours">{{= ticker_para_part2_bold }}</strong>
+                    {{= ticker_para_part3 }}
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="threestages">
+        <h3 class="threestages-title">{{= threestages_title }}</h3>
+        <p class="threestages-paragraph">{{= threestages_paragraph }}</p>
+        <div class="threestages-chart">
+            <h4 class="threestages-chart-title">{{= threestages_shootings_title }}</h4>
+            <p class="threestages-chart-paragraph">{{= threestages_shootings_paragraph }}</p>
+            <div class="threestages-chart-image">
+                <img src="{{= pathStatic }}/{{= vocab_dir }}/img/1_death/shootings.png">
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-5000">{{= threestages_axes_5000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-3000">{{= threestages_axes_3000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-1000">{{= threestages_axes_1000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-0">{{= threestages_axes_0 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2012">{{= threestages_axes_2012 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2014">{{= threestages_axes_2014 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2016">{{= threestages_axes_2016 }}</div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="threestages-chart-key">
+                <li class="threestages-chart-key-item threestages-chart-key-item-shootings"><span>{{= threestages_shootings_key }}</span></li>
+                <li class="threestages-chart-key-item threestages-chart-key-item-all"><span>{{= threestages_all_key }}</span></li>
+            </ul>
+        </div><div class="threestages-chart">
+            <h4 class="threestages-chart-title">{{= threestages_mortar_title }}</h4>
+            <p class="threestages-chart-paragraph">{{= threestages_mortar_paragraph }}</p>
+            <div class="threestages-chart-image">
+                <img src="{{= pathStatic }}/{{= vocab_dir }}/img/1_death/mortar_fire.png">
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-5000">{{= threestages_axes_5000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-3000">{{= threestages_axes_3000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-1000">{{= threestages_axes_1000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-0">{{= threestages_axes_0 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2012">{{= threestages_axes_2012 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2014">{{= threestages_axes_2014 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2016">{{= threestages_axes_2016 }}</div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="threestages-chart-key">
+                <li class="threestages-chart-key-item threestages-chart-key-item-mortar"><span>{{= threestages_mortar_key }}</span></li>
+                <li class="threestages-chart-key-item threestages-chart-key-item-all"><span>{{= threestages_all_key }}</span></li>
+            </ul>
+        </div><div class="threestages-chart">
+            <h4 class="threestages-chart-title">{{= threestages_airstrikes_title }}</h4>
+            <p class="threestages-chart-paragraph">{{= threestages_airstrikes_paragraph }}</p>
+            <div class="threestages-chart-image">
+                <img src="{{= pathStatic }}/{{= vocab_dir }}/img/1_death/airstrikes.png">
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-5000">{{= threestages_axes_5000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-3000">{{= threestages_axes_3000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-1000">{{= threestages_axes_1000 }}</div>
+                <div class="threestages-chart-image-yaxis threestages-chart-image-yaxis-0">{{= threestages_axes_0 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2012">{{= threestages_axes_2012 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2014">{{= threestages_axes_2014 }}</div>
+                <div class="threestages-chart-image-xaxis threestages-chart-image-xaxis-2016">{{= threestages_axes_2016 }}</div>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="threestages-chart-key">
+                <li class="threestages-chart-key-item threestages-chart-key-item-airstrikes"><span>{{= threestages_airstrikes_key }}</span></li>
+                <li class="threestages-chart-key-item threestages-chart-key-item-all"><span>{{= threestages_all_key }}</span></li>
+            </ul>
         </div>
     </div>
 </section>

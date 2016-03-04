@@ -3,7 +3,7 @@
 @import "news_special/_boilerplate_tags";
 @import "app";
 @import "hero_video";
-@import "ticker";
+@import "death";
 @import "population";
 @import "price_of_food";
 @import "credits-share-and-more";
@@ -38,106 +38,7 @@
     @extend .wrapper;
 }
 
-.story {
-    @extend %column;
-    padding: 0;
-
-    @include respondMinMax (1008px, false) {
-        @include columns(8);
-        // float: left;
-    }
-}
-
-.story--wide {
-    @extend %column;
-    padding: 0;
-
-    @include respondMinMax (1008px, false) {
-        @include columns(12);
-    }
-
-    .story-body {
-        padding-right: 0;
-        max-width: 40.625em;
-        margin: 0 auto;
-    }
-}
-
-.story--full {
-    @extend %column;
-    padding: 0;
-
-    .story-body {
-        @include respondMinMax (1008px, false) {
-            @include columns(8);
-            margin: 0 auto;
-            padding-right: 0;
-        }
-    }
-}
-
-.sidebar {
-    @extend %column;
-    @include respondMinMax (1008px, false) {
-        @include columns(4);
-        float: left;
-    }
-}
-
-.story-meta-broken {
-    border-bottom: 1px solid #dcdcdc;
-    font-size: .875em;
-    line-height: 1.14286;
-    overflow: auto;
-    padding-bottom: 16px;
-    width: 100%;
-
-    .date {
-        color: #767676;
-        padding-left: 28px;
-        margin-left: -10px;
-        background-image: url("../img/boilerplate-icons-sprite.png");
-        background-repeat: no-repeat;
-        background-position: left -4011px;
-    }
-
-    a {
-        color: #cc0101;
-        text-decoration: none;
-
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: underline;
-        }
-    }
-}
-
-.story-metalist {
-    float: left;
-    margin: 0 16px 0 0;
-    padding: 0;
-
-    > li {
-        border-right: 1px solid #dcdcdc;
-        display: inline-block;
-        margin-right: .2em;
-        padding-right: .5em;
-        margin-bottom: 2px;
-        margin-top: 2px;
-        white-space: nowrap;
-
-        &:last-child {
-            border-right: none;
-            margin-right: 0;
-            padding-right: 0;
-        }
-    }
-}
-
-.story-title,
-.story-body,
-.sidebar-item {
+.story-body {
     > *:first-child {
         margin-top: 0;
     }
@@ -147,35 +48,8 @@
     }
 }
 
-.story-title {
-    padding-top: 1em;
-
-    @include respondMinMax (600px, false) {
-        padding-top: 1.75em;
-    }
-}
-
-.sidebar {
-    padding-top: 1.375em;
-}
-
-.story-intro {
-    padding-top: 1em;
-
-    @include respondMinMax (600px, false) {
-        padding-top: 1.75em;
-    }
-}
-
 .story-body {
     padding-top: 1.75em;
-
-    &.mym {
-        padding-top: 0;
-        padding-bottom: 3.75em;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 1rem;
-    }
 
     @include respondMinMax (600px, false) {
         margin-left: 8.333%;
@@ -188,74 +62,25 @@
         margin-right: 0;
     }
 
-    > p {
+    p {
         line-height: 1.375;
         margin-top: 1em;
         margin-bottom: 1em;
-
         @include respondMinMax (600px, false) {
             font-size: 1.125em;
         }
-
         @include respondMinMax (1008px, false) {
             font-size: 1em;
         }
-
         @include respondMinMax (1280px, false) {
             font-size: 1.125em;
         }
     }
 
-    > h2 {
-        font-weight: normal;
-        margin-top: 1.125rem;
-    }
-
-    > h1,
-    > h2,
-    > h3 {
+    h1,
+    h2,
+    h3 {
         color: #1e1e1e;
-    }
-
-    .my-manifesto & {
-        padding-top: 0;
-    }
-}
-
-.story-body--wide {
-    padding-top: 1.75em;
-
-    .issue & {
-        padding-top: .5rem;
-
-        @include respondMinMax (600px, false) {
-            padding-top: 1rem;
-        }
-    }
-}
-
-.story-body__intro {
-    font-weight: bold;
-
-    & + p {
-        margin-top: 1.4375em;
-    }
-}
-
-.story-body__crosshead,
-.sidebar__crosshead {
-    font-size: 1.25em;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-top: .9em;
-}
-
-.sidebar-item {
-    background: #ededed;
-    padding: 1em;
-
-    & + .sidebar-item {
-        margin-top: 1.5em;
     }
 }
 
