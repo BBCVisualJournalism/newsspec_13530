@@ -6,8 +6,9 @@ define([
     'video',
     'ticker',
     'population_chart',
-    'health_attack_counter'
-], function (news, utils, OptimisedScroll, scrollHandler, Video, Ticker, PopulationChart, HealthAttackCounter) {
+    'health_attack_counter',
+    'schools_chart'
+], function (news, utils, OptimisedScroll, scrollHandler, Video, Ticker, PopulationChart, HealthAttackCounter, SchoolsChart) {
     $.emit('init_images');
 
     function init() {
@@ -25,6 +26,7 @@ define([
         initPopulationCharts();
         new HealthAttackCounter(news.$('#health-attack-counter-list-facilities'));
         new HealthAttackCounter(news.$('#health-attack-counter-list-personnel'));
+        new SchoolsChart(news.$('.schools-chart'));
     }
 
     var populationChartsPassed = false;

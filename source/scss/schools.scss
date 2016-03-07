@@ -1,0 +1,112 @@
+.schools {
+    &-chart {
+        width: 280px;
+        height: 350px;
+        position: relative;
+        float: right;
+        &-group {
+            position: relative;
+            width: 56px;
+            height: 100%;
+            display: inline-block;
+            vertical-align: bottom;
+            border-bottom: 1px solid #222;
+            &-inner {
+                width: 44px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -22px;
+            }
+            &-bar {
+                width: 20px;
+                height: 50px;
+                -webkit-transition: height 750ms;
+                transition: height 750ms;
+                display: inline-block;
+                vertical-align: bottom;
+                &-1 {
+                    background-color: $barColor1;
+                    margin-right: 4px;
+                }
+                &-2 {
+                    background-color: $barColor2;
+                }
+            }
+            &-axis-label {
+                width: 56px;
+                height: 10px;
+                position: absolute;
+                bottom: -11px;
+                left: 50%;
+                margin-left: -28px;
+                border-left: 1px solid #ccc;
+                &-last {
+                    border-right: 1px solid #ccc;
+                }
+                span {
+                    font-size: 12px;
+                    line-height: 20px;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+                &-odd {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-yaxis {
+            position: absolute;
+            left: -20px;
+            z-index: -1;
+            width: 20px;
+            font-size: 12px;
+            text-align: right;
+            overflow: visible;
+            &::after {
+                content: '';
+                width: 280px;
+                border-top: 1px solid #ccc;
+                position: absolute;
+                top: 7px;
+                left: 20px;
+            }
+            &-7m {
+                top: -8px;
+            }
+            &-6m {
+                top: 42px;
+            }
+            &-5m {
+                top: 92px;
+            }
+            &-4m {
+                top: 142px;
+            }
+            &-3m {
+                top: 192px;
+            }
+            &-2m {
+                top: 242px;
+            }
+            &-1m {
+                top: 292px;
+            }
+            &-0 {
+                top: 342px;
+                z-index: 0;
+                &::after {
+                    position: static;
+                    border: none;
+                }
+            }
+            span {
+                height: 15px;
+                margin-right: 4px;
+            }
+        }
+    }
+}

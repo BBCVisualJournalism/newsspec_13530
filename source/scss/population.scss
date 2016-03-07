@@ -1,5 +1,5 @@
-$beforeColor: #8bbfbf;
-$afterColor: #007f7f;
+$barColor1: #8bbfbf;
+$barColor2: #007f7f;
 
 .population {
     margin: 1em 0;
@@ -44,12 +44,12 @@ $afterColor: #007f7f;
                 }
                 &-before {
                     &::before {
-                        background-color: $beforeColor;
+                        background-color: $barColor1;
                     }
                 }
                 &-after {
                     &::before {
-                        background-color: $afterColor;
+                        background-color: $barColor2;
                     }
                 }
             }
@@ -98,7 +98,7 @@ $afterColor: #007f7f;
             }
             &-before {
                 .population-chart-bar-value {
-                    background-color: $beforeColor;
+                    background-color: $barColor1;
                     margin: 0 12px 0 4px;
                     span {
                         left: 0;
@@ -107,7 +107,7 @@ $afterColor: #007f7f;
             }
             &-after {
                 .population-chart-bar-value {
-                    background-color: $afterColor;
+                    background-color: $barColor2;
                     margin: 0 4px 0 12px;
                     span {
                         right: 0
@@ -156,10 +156,10 @@ $afterColor: #007f7f;
             &-figure {
                 font-size: 3em;
                 &-before {
-                    color: $beforeColor;
+                    color: $barColor1;
                 }
                 &-after {
-                    color: $afterColor;
+                    color: $barColor2;
                 }
             }
         }
