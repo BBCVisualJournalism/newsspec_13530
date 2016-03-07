@@ -13,81 +13,66 @@
 
     h1 { //trafalgar
         font-size: 20px;
-        line-height: 24px;
         letter-spacing: -.03em;
         font-weight: 700;
 
         @include respondMinMax (20em, false) {
             font-size: 24px;
-            line-height: 28px;
         }
 
         @include respondMinMax (37.5em, false) {
             font-size: 36px;
-            line-height: 40px;
         }
 
         @include respondMinMax (63em, false) {
             font-size: 32px;
-            line-height: 36px;
         }
 
         @include respondMinMax (1280px, false) {
             font-size: 36px;
-            line-height: 40px;
         }
     }
 
     h2 {
         font-size: 20px;
-        line-height: 24px;
         letter-spacing: -.03em;
 
         @include respondMinMax (37.5em, false) {
             font-size: 26px;
-            line-height: 30px;
         }
 
         @include respondMinMax (63em, false) {
             font-size: 24px;
-            line-height: 24px;
         }
 
         @include respondMinMax (1280px, false) {
             font-size: 26px;
-            line-height: 30px;
         }
     }
 
     h3 {
         font-size: 18px;
-        line-height: 20px;
         letter-spacing: -0.4px;
         font-weight: 700;
 
         @include respondMinMax (37.5em, false) {
             font-size: 20px;
-            line-height: 24px;
             letter-spacing: -0.5px;
         }
     }
 
     h4 {
         font-size: 15px;
-        line-height: 18px;
         letter-spacing: inherit;
 
         @include respondMinMax (37.5em, false) {
-            line-height: 19px;
         }
 
         @include respondMinMax (63em, false) {
             font-size: 14px;
-            line-height: 18px;
         }
 
         @include respondMinMax (1280px, false) {
-            line-height: 19px;
         }
     }
 
@@ -134,7 +119,6 @@
     body & {
         h2 {
             font-size: 20px;
-            line-height: 24px;
             letter-spacing: -.03em;
             font-weight: bold;
             margin-top: 1.5em;

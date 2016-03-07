@@ -1,0 +1,48 @@
+.health-attack-counter {
+    margin: 1em 0 2em;
+    .health-attack-counter-title {
+        text-align: center;
+        height: 44px;
+        margin-bottom: 0.5em;
+        &-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        &-label {
+            font-size: 1em;
+            font-weight: normal;
+        }
+    }
+    .health-attack-counter-list {
+        margin: 0 1em;
+        padding: 0;
+        list-style: none;
+        &-item {
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: #c00;
+            border-radius: 50%;
+            margin: 0 4px 4px 0;
+            float: left;
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+.story-body .hospitals-text {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
+    strong {
+        font-size: 2em;
+        color: #c00;
+    }
+    &-image {
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
