@@ -45,6 +45,9 @@
         &-price {
             height: 1.5em;
         }
+        &-label {
+            display: none;
+        }
     }
     &-show-area-name-mob .priceoffood-area-name {
         opacity: 1;
@@ -90,11 +93,24 @@
             overflow: hidden;
         }
 
-        &-show-area-name-dt .priceoffood-area-name {
-            opacity: 1;
-            width: 128.5714287%;
-            white-space: normal;
-            overflow: visible;
+        &-show-area-name-dt {
+            position: relative;
+            .priceoffood-area-label {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -128.5714287%;
+                width: 128.5714287%;
+                font-size: inherit;
+                text-align: right;
+                margin: 126px 0 1em;
+            }
+            .priceoffood-area-name {
+                opacity: 1;
+                width: 128.5714287%;
+                white-space: normal;
+                overflow: visible;
+            }
         }
 
         .ns_rtl & {
