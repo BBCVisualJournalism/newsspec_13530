@@ -2,6 +2,9 @@
     margin: 1em 0 2em;
     .health-attack-counter-title {
         text-align: center;
+        @include respondMinMax(600px, false) {
+            text-align: start;
+        }
         height: 44px;
         margin-bottom: 0.5em;
         &-number {
@@ -15,6 +18,9 @@
     }
     .health-attack-counter-list {
         margin: 0 1em;
+        @include respondMinMax(600px, false) {
+            margin: 0;
+        }
         padding: 0;
         list-style: none;
         &-item {
@@ -43,6 +49,7 @@
     &-image {
         margin: 0 auto;
         width: 80%;
+        max-width: 342px;
     }
 }
 
