@@ -112,33 +112,6 @@
         }
     }
 
-    .schools-legend {
-        margin: 0 0 1em;
-        padding: 0;
-        list-style: none;
-        &-item {
-            margin: 0.5em 0;
-            &::before {
-                content: '';
-                display: block;
-                height: 1.25em;
-                width: 1.25em;
-                float: left;
-                margin-right: 8px;
-            }
-            &-1 {
-                &::before {
-                    background-color: $barColor1;
-                }
-            }
-            &-2 {
-                &::before {
-                    background-color: $barColor2;
-                }
-            }
-        }
-    }
-
     @include respondMinMax(600px, false) {
         width: 470px;
         &-chart {
@@ -166,11 +139,6 @@
                 width: 450px;
             }
         }
-
-        .schools-legend {
-            width: 284px;
-            float: right;
-        }
     }
 
     @include respondMinMax(1008px, false) {
@@ -195,5 +163,37 @@
                 width: 590px;
             }
         }
+    }
+}
+
+.rte .schools-legend {
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: none;
+    &-item {
+        margin: 0.5em 0;
+        &::before {
+            content: '';
+            display: block;
+            height: 1.25em;
+            width: 1.25em;
+            float: left;
+            margin-right: 8px;
+        }
+        &-1 {
+            &::before {
+                background-color: $barColor1;
+            }
+        }
+        &-2 {
+            &::before {
+                background-color: $barColor2;
+            }
+        }
+    }
+
+    @include respondMinMax(600px, false) {
+        width: 284px;
+        float: right;
     }
 }
