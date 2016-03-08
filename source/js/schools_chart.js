@@ -5,9 +5,10 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     };
 
     var calcBarHeight = function ($bar) {
-        var barHeightMultiplier = utils.isMobile() ? 1 : 1.5;
+        // var barHeightMultiplier = utils.isMobile() ? 1 : 1.5;
         var barValue = $bar.attr('data-value');
-        var barHeight = (barValue * 50) * barHeightMultiplier;
+        // var barHeight = (barValue * 50) * barHeightMultiplier;
+        barHeight = (barValue * 50);
         return barHeight;
     };
 

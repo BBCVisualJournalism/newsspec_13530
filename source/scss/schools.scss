@@ -1,4 +1,7 @@
 .schools {
+    width: 304px;
+    margin: 0 auto;
+    padding-bottom: 25px;
     &-chart {
         width: 280px;
         height: 350px;
@@ -35,19 +38,18 @@
             }
             &-axis-label {
                 width: 56px;
-                height: 10px;
+                height: 8px;
                 position: absolute;
-                bottom: -11px;
-                left: 50%;
-                margin-left: -28px;
+                bottom: -9px;
+                left: -6px;
                 border-left: 1px solid #ccc;
                 &-last {
                     border-right: 1px solid #ccc;
                 }
                 span {
-                    font-size: 12px;
-                    line-height: 20px;
+                    font-size: 14px;
                     display: block;
+                    padding-top: 8px;
                     width: 100%;
                     text-align: center;
                 }
@@ -60,10 +62,10 @@
         }
         &-yaxis {
             position: absolute;
-            left: -20px;
+            left: -24px;
             z-index: -1;
-            width: 20px;
-            font-size: 12px;
+            width: 24px;
+            font-size: 14px;
             text-align: right;
             overflow: visible;
             &::after {
@@ -72,7 +74,7 @@
                 border-top: 1px solid #ccc;
                 position: absolute;
                 top: 7px;
-                left: 20px;
+                left: 24px;
             }
             &-7m {
                 top: -8px;
@@ -106,6 +108,59 @@
             span {
                 height: 15px;
                 margin-right: 4px;
+            }
+        }
+    }
+
+    @include respondMinMax(600px, false) {
+        width: 470px;
+        &-chart {
+            width: 450px;
+            &-group {
+                width: 90px;
+                &-inner {
+                    width: 74px;
+                    margin-left: -37px;
+                }
+                &-bar {
+                    width: 35px;
+                }
+                &-axis-label {
+                    width: 90px;
+                    left: -8px;
+                    &-odd {
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &-yaxis::after {
+                width: 450px;
+            }
+        }
+    }
+
+    @include respondMinMax(1008px, false) {
+        width: 610px;
+        &-chart {
+            width: 590px;
+            &-group {
+                width: 118px;
+                &-inner {
+                    width: 86px;
+                    margin-left: -43px;
+                }
+                &-bar {
+                    width: 41px;
+                }
+                &-axis-label {
+                    width: 118px;
+                    left: -16px;
+                }
+            }
+            &-yaxis::after {
+                width: 590px;
             }
         }
     }

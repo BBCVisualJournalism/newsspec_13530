@@ -3,7 +3,8 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
         'death': { element: news.$('.death-ticker'), reached: false },
         'population': { element: news.$('.population'), reached: false },
         'price_of_food': { element: news.$('.priceoffood'), reached: false },
-        'health': { element: news.$('.health-attack-counter-facilities'), reached: false }
+        'health': { element: news.$('.health-attack-counter-facilities'), reached: false },
+        'education': { element: news.$('.schools-chart'), reached: false }
     };
 
     var init = function () {
