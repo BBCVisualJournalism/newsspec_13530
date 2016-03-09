@@ -42,6 +42,10 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
         enterPlayingMode: function () {
             if (this.product === 'background') {
                 this.showAudioControls();
+                // audio on by default
+                if (this.mp.muted()) {
+                    this.mp.muted(false);
+                }
                 this.updateAudioControlLabel();
                 news.$(window).on('optimisedScroll', this.handleScroll.bind(this));
             }
