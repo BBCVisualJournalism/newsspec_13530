@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 
     var amdModulePaths = {
         'pubsub': './lib/vendors/jquery/pubsub',
+        'istats-1': 'empty:',
         'bump-3': 'empty:'
     };
 

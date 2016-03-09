@@ -73,9 +73,11 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
             if (this.mp.muted()) {
                 // if muted, unmute
                 this.mp.muted(false);
+                news.istats.log('audio-unmuted', 'newsspec-interaction');
             } else {
                 // if unmuted, mute
                 this.mp.muted(true);
+                news.istats.log('audio-muted', 'newsspec-interaction');
             }
             this.updateAudioControlLabel();
         },
