@@ -1,13 +1,8 @@
-$creditsFontColour:#222;
-
 .ns_credits-holder {
-    width: calc(100% - 40px);
-    margin:0 auto 0 auto;
-    padding: 52px 20px 0;
+    margin: 0 auto;
+    padding: 0 20px;
     clear: both;
-    background: #fff;
     overflow: hidden;
-
 
     @include k-columns(12);
     @include centre-columns(12);
@@ -31,30 +26,20 @@ $creditsFontColour:#222;
         font-size: 24px;
         font-weight: bold;
         font-style: normal;
-        color: $creditsFontColour;
         margin: 20px 0;
         a {
             text-decoration: none;
             font-size: 12px;
             font-weight: normal;
-            color: $creditsFontColour;
+            letter-spacing: normal;
+            color: inherit;
         }
     }
 
-    p {
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: normal;
-        font-style: normal;
-        margin: 20px auto;
-        color: $creditsFontColour;
-    }
-
-
     .ns_credits-title {
         border-top: solid 1px #dbdbdb;
-        padding: 16px 0 0 0;
-        margin: 32px 0 0 0;
+        padding: 16px 0 0;
+        margin: 32px 0 16px;
     }
 
     .ns_share-this-story-title {
@@ -126,7 +111,6 @@ $creditsFontColour:#222;
                 }
                 span {
                     display: block;
-                    font-size: 1.6em;
                     font-weight: bold;
                     padding: 0;
                 }
@@ -166,5 +150,4 @@ $creditsFontColour:#222;
             display:none;
         }
     }
-
 }
