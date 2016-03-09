@@ -44,6 +44,9 @@
         }
         &-price {
             height: 1.5em;
+            &::before {
+                content: '+';
+            }
         }
         &-label {
             display: none;
