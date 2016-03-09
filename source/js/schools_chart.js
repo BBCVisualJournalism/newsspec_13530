@@ -20,7 +20,6 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
     SchoolsChart.prototype = {
         init: function () {
             this.$chartBars = this.$chart.find('.schools-chart-group-bar');
-            this.updateBars();
         },
 
         updateBars: function () {

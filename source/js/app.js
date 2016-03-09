@@ -22,14 +22,12 @@ define([
             autoplay: 'true'
         });
         new Ticker(3500, 400, 500);
-        sameHeight(news.$('.threestages-chart-paragraph'));
+        // sameHeight(news.$('.threestages-chart-paragraph'));
         initPopulationCharts();
-        new HealthAttackCounter(news.$('#health-attack-counter-list-facilities'));
-        new HealthAttackCounter(news.$('#health-attack-counter-list-personnel'));
-        new SchoolsChart(news.$('.schools-chart'));
+        initHealthAttackCounters();
+        initSchoolsChart();
     }
 
-    var populationChartsPassed = false;
     function initPopulationCharts() {
         var populationCharts = [
             new PopulationChart(news.$('#population-chart-city-1')),
@@ -40,7 +38,7 @@ define([
             new PopulationChart(news.$('#population-chart-city-6'))
         ];
         
-        function animateCharts() {
+        function animatePopulationCharts() {
             setTimeout(function () {
                 for (var i = 0; i < populationCharts.length; i++) {
                     populationCharts[i].updateBars();
@@ -48,7 +46,24 @@ define([
             }, 500);
         }
 
-        news.pubsub.on('section-population-reached', animateCharts);
+        news.pubsub.on('section-population-reached', animatePopulationCharts);
+    }
+
+    function initHealthAttackCounters() {
+        new HealthAttackCounter(news.$('#health-attack-counter-list-facilities'));
+        new HealthAttackCounter(news.$('#health-attack-counter-list-personnel'));
+    }
+
+    function initSchoolsChart() {
+        var schoolsChart = new SchoolsChart(news.$('.schools-chart'));
+
+        function animateSchoolsChart() {
+            setTimeout(function () {
+                schoolsChart.updateBars();
+            }, 500);
+        }
+
+        news.pubsub.on('section-education-reached', animateSchoolsChart);
     }
 
     function sameHeight($elements) {
