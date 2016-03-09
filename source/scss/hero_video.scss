@@ -59,3 +59,23 @@
         }
     }
 }
+
+.hero-image {
+    &-section {
+        &-2 {
+            background-image: url(../img/hero_images/1_school_children.jpg);
+        }
+        &-3 {
+            background-image: url(../img/hero_images/2_farmer.jpg);
+        }
+        &-4 {
+            background-image: url(../img/hero_images/3_stall.jpg);
+        }
+        &-5 {
+            background-image: url(../img/hero_images/4_health.jpg);
+        }
+        &-6 {
+            background-image: url(../img/hero_images/5_school.jpg);
+        }
+    }
+}
