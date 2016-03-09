@@ -98,7 +98,7 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
         // (d and m have no leading zeroes if it is a single digit number)
         makeDate: function (dateString) {
             var dateArray = dateString.split('/');
-            var date = new Date(dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0]);
+            var date = new Date(Date.UTC(dateArray[2], dateArray[1] - 1, dateArray[0]));
             var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
             return date.getUTCDate() + ' ' + monthNames[date.getUTCMonth()] + ' ' + date.getUTCFullYear();
         }
