@@ -17,6 +17,7 @@ define(['lib/news_special/bootstrap', 'utils'], function (news, utils) {
                 if (!sectionElements[key].reached) {
                     sectionElements[key].reached = true;
                     news.pubsub.emit('section-' + key + '-reached');
+                    news.istats.log('section-' + key + '-reached', 'newsspec-interaction');
                 }
             }
         }
