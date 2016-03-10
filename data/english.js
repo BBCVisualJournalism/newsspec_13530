@@ -16126,9 +16126,6 @@ define(function() {
         ["Tamam Abd al-Gani al-Hees", 2, 1, 9, "27/2/2016"],
         ["Maher Sami al-Hamadi", 2, 3, 5, "27/2/2016"],
         ["Savana Fayez Savan", 3, 2, 5, "27/2/2016"],
-        ["Mohammad Tenbi", 2, 1, 3, "28/2/2016"],
-        ["Hamzeh Muhmoud Habo", 2, 2, 3, "1/3/2016"],
-        ["Omar Abood", 2, 2, 5, "7/3/2016"],
-        ["Layth Dado", 2, 2, 5, "7/3/2016"]
+        ["Mohammad Tenbi", 2, 1, 3, "28/2/2016"]
     ]
 });
