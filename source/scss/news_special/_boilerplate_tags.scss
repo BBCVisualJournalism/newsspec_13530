@@ -1,79 +1,33 @@
 .main {
-    h1, h2, h3, h4 {
-        margin: 0;
-        padding: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
     p {
         margin: 0;
         padding: 0;
     }
 
     h1 { //trafalgar
-        font-size: 20px;
         letter-spacing: -.03em;
         font-weight: 700;
-
-        @include respondMinMax (20em, false) {
-            font-size: 24px;
-        }
-
-        @include respondMinMax (37.5em, false) {
-            font-size: 36px;
-        }
-
-        @include respondMinMax (63em, false) {
-            font-size: 32px;
-        }
-
-        @include respondMinMax (1280px, false) {
-            font-size: 36px;
-        }
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     h2 {
-        font-size: 20px;
         letter-spacing: -.03em;
-
-        @include respondMinMax (37.5em, false) {
-            font-size: 26px;
-        }
-
-        @include respondMinMax (63em, false) {
-            font-size: 24px;
-        }
-
-        @include respondMinMax (1280px, false) {
-            font-size: 26px;
-        }
     }
 
     h3 {
-        font-size: 18px;
         letter-spacing: -0.4px;
         font-weight: 700;
 
         @include respondMinMax (37.5em, false) {
-            font-size: 20px;
             letter-spacing: -0.5px;
         }
     }
 
     h4 {
-        font-size: 15px;
         letter-spacing: inherit;
-
-        @include respondMinMax (37.5em, false) {
-        }
-
-        @include respondMinMax (63em, false) {
-            font-size: 14px;
-        }
-
-        @include respondMinMax (1280px, false) {
-        }
     }
 
     section + section {
@@ -111,83 +65,6 @@
                 @include k-columns(6);
                 @include centre-columns(6);
             }
-        }
-    }
-}
-
-.rte {
-    body & {
-        h2 {
-            font-size: 20px;
-            letter-spacing: -.03em;
-            font-weight: bold;
-            margin-top: 1.5em;
-
-            @include respondMinMax (37.5em, false) {
-                margin-top: 1.5385em;
-            }
-
-            @include respondMinMax (63em, false) {
-                margin-top: 1.333em;
-            }
-
-            @include respondMinMax (1280px, false) {
-                margin-top: 1.5385em;
-            }
-        }
-
-        blockquote {
-            font-size: 20px;
-            line-height: 24px;
-            letter-spacing: -.03em;
-            color: #333;
-            font-weight: bold;
-            margin-left: 1em;
-            margin-right: 2em;
-            margin-bottom: 1.75em;
-
-            @include respondMinMax (37.5em, false) {
-                margin-bottom: 1.75em;
-                margin-top: 2.5em;
-                margin-left: 0;
-            }
-
-            &:before {
-                content: '‘‘';
-                display: block;
-                font-size: 64px;
-                letter-spacing: -6px;
-                margin-top: 48px;
-                margin-bottom: -8px;
-                margin-left: -4px;
-
-                @include respondMinMax (37.5em, false) {
-                    font-size: 90px;
-                    letter-spacing: -8px;
-                    margin-top: 48px;
-                    margin-bottom: -8px;
-                    margin-left: -4px;
-                }
-
-                @include respondMinMax (1280px, false) {
-                    font-size: 90px;
-                    letter-spacing: -8px;
-                    margin-top: 48px;
-                    margin-bottom: -8px;
-                    margin-left: -4px;
-                }
-            }
-        }
-
-        cite {
-            font-size: 15px;
-            line-height: 20px;
-            letter-spacing: inherit;
-            color: #999;
-            display: block;
-            font-weight: normal;
-            font-style: normal;
-            margin-top: .5em;
         }
     }
 }

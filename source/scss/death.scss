@@ -45,6 +45,7 @@
     font-size: 1.125em;
     &-hours {
         color: #c00;
+        font-size: 1.5em;
     }
     @include respondMinMax(600px, false) {
         font-size: 1.25em;
@@ -158,6 +159,7 @@
         @include respondMinMax(768px, false) {
             width: 50%;
             display: inline-block;
+            vertical-align: bottom;
             &:nth-child(odd) {
                 padding-right: 8px;
             }

@@ -106,7 +106,7 @@
                 width: 128.5714287%;
                 font-size: inherit;
                 text-align: right;
-                margin: 126px 0 1em;
+                margin: 128px 0 1em;
             }
             .priceoffood-area-name {
                 opacity: 1;
@@ -120,6 +120,14 @@
             float: left;
             &-area {
                 &-name {
+                    left: auto;
+                    right: -128.5714287%;
+                    text-align: left;
+                }
+            }
+
+            &-show-area-name-dt {
+                .priceoffood-area-label {
                     left: auto;
                     right: -128.5714287%;
                     text-align: left;

@@ -22,7 +22,7 @@ define([
             autoplay: 'true'
         });
         new Ticker(3500, 400, 500);
-        // sameHeight(news.$('.threestages-chart-paragraph'));
+        sameHeight(news.$('.threestages-chart-paragraph'));
         initPopulationCharts();
         initHealthAttackCounters();
         initSchoolsChart();

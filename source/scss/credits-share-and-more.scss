@@ -36,6 +36,21 @@
         }
     }
 
+    p {
+        line-height: 1.375;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        @include respondMinMax (600px, false) {
+            font-size: 1.125em;
+        }
+        @include respondMinMax (1008px, false) {
+            font-size: 1em;
+        }
+        @include respondMinMax (1280px, false) {
+            font-size: 1.125em;
+        }
+    }
+
     .ns_credits-title {
         border-top: solid 1px #dbdbdb;
         padding: 16px 0 0;

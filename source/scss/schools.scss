@@ -7,6 +7,9 @@
         height: 350px;
         position: relative;
         float: right;
+        .ns_rtl & {
+            float: left;
+        }
         &-group {
             position: relative;
             width: 56px;
@@ -75,6 +78,15 @@
                 position: absolute;
                 top: 7px;
                 left: 24px;
+            }
+            .ns_rtl & {
+                left: auto;
+                right: -24px;
+                text-align: left;
+                &::after {
+                    left: auto;
+                    right: 24px;
+                }
             }
             &-7m {
                 top: -8px;
@@ -179,6 +191,11 @@
             width: 1.25em;
             float: left;
             margin-right: 8px;
+            .ns_rtl & {
+                float: right;
+                margin-right: 0;
+                margin-left: 8px;
+            }
         }
         &-1 {
             &::before {

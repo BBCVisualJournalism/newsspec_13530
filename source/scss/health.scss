@@ -36,6 +36,14 @@
             }
         }
     }
+
+    .ns_rtl & {
+        .health-attack-counter-list {
+            &-item {
+                float: right;
+            }
+        }
+    }
 }
 
 .story-body .hospitals-text {

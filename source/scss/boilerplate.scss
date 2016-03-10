@@ -105,9 +105,10 @@
     @media (min-width: 480px) and (max-aspect-ratio: 1/1) {
         padding-bottom: 67%;
     }
+}
 
-    @media (min-width: 600px) and (max-aspect-ratio: 1/1) {
-        background-position: center center;
+.story-image-full {
+    @media (max-aspect-ratio: 1/1) {
         padding-bottom: 67%;
     }
 }
@@ -197,27 +198,27 @@
         @include k-columns(6);
         @include centre-columns(6);
     }
-}
 
-.hero-subtitle {
-    margin-top: .125em;
-    line-height: 1;
-
-    @include respondMinMax (20em, false) {
-        font-size: 1em;
+    .hero-subtitle {
+        margin-top: .5em;
         line-height: 1;
-    }
 
-    @include respondMinMax (37.5em, false) {
-        font-size: 1.25em;
-    }
+        @include respondMinMax (20em, false) {
+            font-size: 1em;
+            line-height: 1;
+        }
 
-    @include respondMinMax (63em, false) {
-        font-size: 1.25em;
-    }
+        @include respondMinMax (37.5em, false) {
+            font-size: 1.25em;
+        }
 
-    @include respondMinMax (1280px, false) {
-        font-size: 1.5em;
+        @include respondMinMax (63em, false) {
+            font-size: 1.25em;
+        }
+
+        @include respondMinMax (1280px, false) {
+            font-size: 1.5em;
+        }
     }
 }
 
