@@ -131,7 +131,7 @@ $barColor2: #007f7f;
 
     .ns_rtl & {
         direction: ltr;
-        &-figures {
+        &-figures, &-chart-bar-value span, &-chart-bar-label, &-chart-name {
             direction: rtl;
         }
     }
