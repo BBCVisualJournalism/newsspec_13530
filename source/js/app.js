@@ -4,7 +4,7 @@ define([
     'optimised_scroll',
     'scroll_handler',
     'video',
-    'ticker',
+    'ticker_new',
     'population_chart',
     'health_attack_counter',
     'schools_chart'
