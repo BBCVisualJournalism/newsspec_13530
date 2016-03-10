@@ -25,6 +25,7 @@ module.exports = function (grunt) {
         "pashto": "ar-ur",
         "persian": "ar-ur",
         "urdu": "ar-ur",
+        "persian": "fa",
 
         "burmese": "my",
         "chinese": "zh-hans",
