@@ -15,7 +15,7 @@ define(function () {
         english: {
             ageGender: ["woman", "man", "boy", "girl"],
             causes: ["was kidnapped and executed", "was killed in a mortar shell attack", "was shot and killed", "was killed in an airstrike", "was detained, tortured and killed", "was killed in an explosion", "was killed", "was kidnapped, tortured and killed", "was detained and executed", "was executed", "died after being prevented from seeking medical help", "was kidnapped, tortured and executed", "died in a chemical weapons attack", "was detained, tortured and executed"],
-            locations: ["Raqqa", "Homs", "Idlib", "Aleppo", "Damascus Countryside province", "Deir al-Zour", "Deraa", "Damascus", "Latakia", "Hama", "Hassakeh", "Suweida", "Other", "Quneitra", "Tartous", "Douma", "Iraq", "Jordan", "Iraq", "Lebanon", "Egypt", "Sudan"]
+            locations: ["Raqqa", "Homs", "Idlib", "Aleppo", "Damascus Countryside province", "Deir al-Zour", "Deraa", "Damascus", "Latakia", "Hama", "Hassakeh", "Suweida", "Other", "Quneitra", "Tartous", "Douma", "Iraq", "Jordan", "Iraq", "Lebanon", "Egypt", "Sudan", "an unknown place", "an unknown place"]
         }
     };
 });
