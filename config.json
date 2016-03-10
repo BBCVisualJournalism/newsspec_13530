@@ -7,6 +7,6 @@
   "imageWidths":    ["320", "640", "1024"],
   "services": {
     "default": "english",
-    "others":  ["arabic", "mundo"]
+    "others":  ["arabic", "portuguese", "hausa", "hindi", "indonesia", "mundo", "persian", "russian", "swahili", "turkish", "ukrainian", "urdu", "kyrgyz", "uzbek"]
   }
 }
