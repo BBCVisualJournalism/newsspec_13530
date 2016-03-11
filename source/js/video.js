@@ -53,14 +53,12 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
 
         playVideoIfPaused: function () {
             if (this.mp.paused()) {
-                console.log('playing video');
                 this.mp.play();
             }
         },
 
         pauseVideoIfPlaying: function () {
             if (!this.mp.paused()) {
-                console.log('pausing video');
                 this.mp.pause();
             }
         },

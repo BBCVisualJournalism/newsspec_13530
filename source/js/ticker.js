@@ -96,8 +96,6 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
         getNextCivilian: function (data) {
             if (this.civilianIndex < data.length) {
                 var civilian = data[this.civilianIndex];
-                console.log('file ' + this.fileIndex + ', civilian ' + this.civilianIndex);
-                console.log(civilian);
                 this.civilianIndex++;
                 return civilian;
             }
@@ -105,7 +103,6 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
 
         processData: function (dataFilePath) {
             var self = this;
-            console.log('requiring ' + dataFilePath);
             require([dataFilePath], function requireCallback(data) {
                 self.updateText(data);
                 self.tickerInterval = setInterval(function intervalCallback() {
