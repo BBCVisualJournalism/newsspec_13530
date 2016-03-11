@@ -21,15 +21,13 @@ module.exports = function (grunt) {
         "uzbek": "standard",
         "vietnamese": "standard",
 
-        "arabic": "ar-ur",
-        "pashto": "ar-ur",
-        "persian": "ar-ur",
-        "urdu": "ar-ur",
+        "arabic": "ar",
+        "pashto": "ar",
+        "urdu": "ur",
         "persian": "fa",
 
         "burmese": "my",
         "chinese": "zh-hans",
-        "hindi": "hi",
         "nepali": "ne",
         "sinhala": "si",
         "tamil": "ta",
