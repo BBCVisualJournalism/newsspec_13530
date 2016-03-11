@@ -1,6 +1,6 @@
 .ns_credits-holder {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 3em;
     clear: both;
     overflow: hidden;
 
@@ -101,12 +101,18 @@
         border-bottom: solid 1px #dbdbdb;
         padding: 16px 0 12px 0;
         margin: 32px 0 24px 0;
+        .locale_ar &, .locale_ha &, .locale_hi &, .locale_fa &, .locale_sw &, .locale_tr &, .locale_uk &, .locale_ky &, .locale_uz & {
+            display: none;
+        }
     }
 
     .ns_onward-journey {
         margin: 0;
         padding: 0;
-        .ns_onward-journey-inner {
+        .locale_ar &, .locale_ha &, .locale_hi &, .locale_fa &, .locale_sw &, .locale_tr &, .locale_uk &, .locale_ky &, .locale_uz & {
+            display: none;
+        }
+        &-inner {
             margin: 0 auto;
             padding: 0;
             ul {
@@ -145,7 +151,7 @@
 
     @include respondMinMax (768px, false) {
         .ns_onward-journey {
-            .ns_onward-journey-inner {
+            &-inner {
                 ul {
                     img {
                         display: block;
