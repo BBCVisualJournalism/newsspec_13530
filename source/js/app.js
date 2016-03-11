@@ -16,7 +16,7 @@ define([
         scrollHandler.init();
         new Video({
             selector: '.hero-video-container',
-            vpid: 'p03knd3c',
+            vpid: 'p03m8kcx',
             // holdingImage: '',
             product: 'background',
             autoplay: 'true'
