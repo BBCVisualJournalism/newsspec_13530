@@ -27,7 +27,8 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
                 },
                 product: this.product,
                 responsive: true,
-                autoplay: this.autoplay
+                autoplay: this.autoplay,
+                quality: 'high'
             };
             this.mp = this.videoEl.player(playerSettings);
             this.mp.load();

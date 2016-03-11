@@ -16,8 +16,8 @@ define([
         scrollHandler.init();
         new Video({
             selector: '.hero-video-container',
-            vpid: 'p03m8kcx',
-            // holdingImage: '',
+            vpid: 'p03m9r7p',
+            holdingImage: 'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13530/content/english/img/poster.jpg',
             product: 'background',
             autoplay: 'true'
         });
