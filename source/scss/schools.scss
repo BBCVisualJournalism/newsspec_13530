@@ -65,9 +65,9 @@
         }
         &-yaxis {
             position: absolute;
-            left: -24px;
+            left: -44px;
             z-index: -1;
-            width: 24px;
+            width: 44px;
             font-size: 14px;
             text-align: right;
             overflow: visible;
@@ -77,15 +77,15 @@
                 border-top: 1px solid #ccc;
                 position: absolute;
                 top: 7px;
-                left: 24px;
+                left: 44px;
             }
             .ns_rtl & {
                 left: auto;
-                right: -24px;
+                right: -44px;
                 text-align: left;
                 &::after {
                     left: auto;
-                    right: 24px;
+                    right: 44px;
                 }
             }
             &-7m {
