@@ -186,6 +186,10 @@
         margin: 0.5em 0;
         position: relative;
         padding-left: 28px;
+        .ns_rtl & {
+            padding-left: 0;
+            padding-right: 28px;
+        }
         &::before {
             content: '';
             display: block;
@@ -196,9 +200,8 @@
             top: 0;
             left: 0;
             .ns_rtl & {
-                float: right;
-                margin-right: 0;
-                margin-left: 8px;
+                left: auto;
+                right: 0;
             }
         }
         &-1 {

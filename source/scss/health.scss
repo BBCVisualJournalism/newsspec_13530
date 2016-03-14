@@ -5,7 +5,6 @@
         @include respondMinMax(600px, false) {
             text-align: start;
         }
-        height: 44px;
         margin-bottom: 0.5em;
         &-number {
             font-size: 2em;
