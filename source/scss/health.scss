@@ -31,6 +31,8 @@
             border-radius: 50%;
             margin: 0 4px 4px 0;
             float: left;
+            -webkit-transition: opacity 500ms;
+            transition: opacity 500ms;
             span {
                 display: none;
             }

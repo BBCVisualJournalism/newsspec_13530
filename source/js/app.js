@@ -47,15 +47,38 @@ define([
         }
 
         news.pubsub.on('section-population-reached', animatePopulationCharts);
+
+        if (utils.isElementInViewport(news.$('.population-charts'))) {
+            news.pubsub.off('section-population-reached');
+            animatePopulationCharts();
+        }
     }
 
     function initHealthAttackCounters() {
-        new HealthAttackCounter(news.$('#health-attack-counter-list-facilities'));
-        new HealthAttackCounter(news.$('#health-attack-counter-list-personnel'));
+        var healthAttackCounters = [
+            new HealthAttackCounter(news.$('#health-attack-counter-list-facilities')),
+            new HealthAttackCounter(news.$('#health-attack-counter-list-personnel'))
+        ];
+
+        function animateHealthAttackCounters() {
+            setTimeout(function () {
+                for (var i = 0; i < healthAttackCounters.length; i++) {
+                    healthAttackCounters[i].animateListItems();
+                }
+            }, 500);
+        }
+
+        news.pubsub.on('section-health-reached', animateHealthAttackCounters);
+
+        if (utils.isElementInViewport(news.$('.health-attack-counter-facilities'))) {
+            news.pubsub.off('section-health-reached');
+            animateHealthAttackCounters();
+        }
     }
 
     function initSchoolsChart() {
-        var schoolsChart = new SchoolsChart(news.$('.schools-chart'));
+        var $schoolsChart = news.$('.schools-chart');
+        var schoolsChart = new SchoolsChart($schoolsChart);
 
         function animateSchoolsChart() {
             setTimeout(function () {
@@ -64,6 +87,11 @@ define([
         }
 
         news.pubsub.on('section-education-reached', animateSchoolsChart);
+
+        if (utils.isElementInViewport($schoolsChart)) {
+            news.pubsub.off('section-educucation-reached');
+            animateSchoolsChart();
+        }
     }
 
     function sameHeight($elements) {
