@@ -38,7 +38,7 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
 
             this.dataPath = this.language === 'other' ?
                 '../data/' :
-                'http://www.stage.bbc.co.uk/news/special/2016/newsspec_13530/data/' + this.language + '/';
+                'http://news.bbcimg.co.uk/news/special/2016/newsspec_13530/data/' + this.language + '/';
             this.dataFilename = this.language === 'other' ? 'ticker_data' : this.fileIndex + '.js';
 
             this.processData(this.dataPath + this.dataFilename);
