@@ -31,6 +31,7 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
                 quality: 'high'
             };
             this.mp = this.videoEl.player(playerSettings);
+            this.firstLoad = true;
             this.mp.load();
             this.setEvents();
         },
@@ -44,7 +45,8 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
             if (this.product === 'background') {
                 this.showAudioControls();
                 // audio on by default
-                if (this.mp.muted()) {
+                if (this.firstLoad && this.mp.muted()) {
+                    this.firstLoad = false;
                     this.mp.muted(false);
                 }
                 this.updateAudioControlLabel();
