@@ -184,13 +184,17 @@
     list-style: none;
     &-item {
         margin: 0.5em 0;
+        position: relative;
+        padding-left: 28px;
         &::before {
             content: '';
             display: block;
             height: 1.25em;
             width: 1.25em;
             float: left;
-            margin-right: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
             .ns_rtl & {
                 float: right;
                 margin-right: 0;
