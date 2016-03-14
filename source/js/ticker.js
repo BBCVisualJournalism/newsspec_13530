@@ -82,8 +82,12 @@ define(['lib/news_special/bootstrap', 'mapper'], function (news, mapper) {
             } else {
                 clearInterval(this.tickerInterval);
                 this.fileIndex++;
-                // TODO: update to reflect all files uploaded
-                var numberOfFiles = 2;
+                var numberOfFiles;
+                if (this.language === 'english') {
+                    numberOfFiles = 537;
+                } else if (this.language === 'arabic') {
+                    numberOfFiles = 539;
+                }
                 if (this.fileIndex > numberOfFiles) {
                     this.fileIndex = 0;
                 }
