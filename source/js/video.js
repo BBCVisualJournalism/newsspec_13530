@@ -84,8 +84,10 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
         updateAudioControlLabel: function () {
             if (this.mp.muted()) {
                 this.$audioControlLabel.text(this.audioControlLabelOffText);
+                this.$audioControl.addClass('video-audio-control-muted');
             } else {
                 this.$audioControlLabel.text(this.audioControlLabelOnText);
+                this.$audioControl.removeClass('video-audio-control-muted');
             }
         },
 
