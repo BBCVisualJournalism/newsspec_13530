@@ -97,11 +97,6 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
         },
 
         handleScroll: function () {
-            // if (utils.isElementInViewport(this.$videoContainer)) {
-            //     this.playVideoIfPaused();
-            // } else {
-            //     this.pauseVideoIfPlaying();
-            // }
             if (!this.muted) {
                 var videoBottomScrollPosition = this.$videoContainer.outerHeight() + this.$videoContainer.offset().top;
                 var windowScrollTop = news.$(window).scrollTop();
