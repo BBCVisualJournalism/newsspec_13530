@@ -47,6 +47,7 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
                 // audio on by default
                 if (this.firstLoad && this.mp.muted()) {
                     this.firstLoad = false;
+                    this.muted = false;
                     this.mp.muted(false);
                 }
                 this.updateAudioControlLabel();
@@ -73,10 +74,12 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
         toggleAudio: function () {
             if (this.mp.muted()) {
                 // if muted, unmute
+                this.muted = false;
                 this.mp.muted(false);
                 news.istats.log('audio-unmuted', 'newsspec-interaction');
             } else {
                 // if unmuted, mute
+                this.muted = true;
                 this.mp.muted(true);
                 news.istats.log('audio-muted', 'newsspec-interaction');
             }
@@ -94,10 +97,28 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
         },
 
         handleScroll: function () {
-            if (utils.isElementInViewport(this.$videoContainer)) {
-                this.playVideoIfPaused();
-            } else {
-                this.pauseVideoIfPlaying();
+            // if (utils.isElementInViewport(this.$videoContainer)) {
+            //     this.playVideoIfPaused();
+            // } else {
+            //     this.pauseVideoIfPlaying();
+            // }
+            if (!this.muted) {
+                var videoBottomScrollPosition = this.$videoContainer.outerHeight() + this.$videoContainer.offset().top;
+                var windowScrollTop = news.$(window).scrollTop();
+                var windowHeight = news.$(window).height();
+                var newVolume;
+
+                if (windowScrollTop > videoBottomScrollPosition) {
+                    newVolume = 2 - (windowScrollTop / videoBottomScrollPosition);
+                } else {
+                    newVolume = 1;
+                }
+                
+                if (newVolume < 0) {
+                    newVolume = 0;
+                }
+                console.log(newVolume);
+                this.mp.volume(newVolume);
             }
         }
     };
