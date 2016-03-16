@@ -55,18 +55,6 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
             }
         },
 
-        playVideoIfPaused: function () {
-            if (this.mp.paused()) {
-                this.mp.play();
-            }
-        },
-
-        pauseVideoIfPlaying: function () {
-            if (!this.mp.paused()) {
-                this.mp.pause();
-            }
-        },
-
         showAudioControls: function () {
             this.$audioControl.removeClass('video-overlay-hidden');
         },
