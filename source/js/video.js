@@ -47,12 +47,21 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
                 // audio on by default
                 if (this.firstLoad && this.mp.muted()) {
                     this.firstLoad = false;
-                    this.muted = false;
-                    this.mp.muted(false);
+                    this.unmute();
                 }
                 this.updateAudioControlLabel();
                 news.$(window).on('optimisedScroll', this.handleScroll.bind(this));
             }
+        },
+
+        mute: function () {
+            this.muted = true;
+            this.mp.muted(true);
+        },
+
+        unmute: function () {
+            this.muted = false;
+            this.mp.muted(false);
         },
 
         showAudioControls: function () {
@@ -61,14 +70,10 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
 
         toggleAudio: function () {
             if (this.mp.muted()) {
-                // if muted, unmute
-                this.muted = false;
-                this.mp.muted(false);
+                this.unmute();
                 news.istats.log('audio-unmuted', 'newsspec-interaction');
             } else {
-                // if unmuted, mute
-                this.muted = true;
-                this.mp.muted(true);
+                this.mute();
                 news.istats.log('audio-muted', 'newsspec-interaction');
             }
             this.updateAudioControlLabel();
