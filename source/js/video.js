@@ -101,11 +101,11 @@ define(['lib/news_special/bootstrap', 'bump-3', 'utils'], function (news, bump, 
                 } else {
                     newVolume = 1;
                 }
-                
+
                 if (newVolume < 0) {
                     newVolume = 0;
                 }
-                console.log(newVolume);
+
                 this.mp.volume(newVolume);
             }
         }
