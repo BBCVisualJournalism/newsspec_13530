@@ -11,6 +11,13 @@
 <style>
 {{= include("../scss/news_special/loading.css") }}
 </style>
+<noscript>
+<style>
+.bbc-news-visual-journalism-loading-spinner {
+    display: none;
+}
+</style>
+</noscript>
 <link rel="stylesheet" href="{{= pathStatic }}/{{= vocab_dir }}/css/boilerplate.css?v={{= version }}"/>
 
 <div class="main ns_{{= languageConfig.languageLookup[vocab_dir].direction }} locale_{{= languageConfig.languageLookup[vocab_dir].code }}" data-locale="{{= languageConfig.languageLookup[vocab_dir].code }}">

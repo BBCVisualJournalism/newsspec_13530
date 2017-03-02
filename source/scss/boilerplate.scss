@@ -91,19 +91,15 @@
     background-color: #ccc;
     background-position: center;
     height: 0;
-    padding-bottom: 37%;
+    padding-bottom: 56%;
     position: relative;
 
-    @media (max-aspect-ratio: 1/1) {
-        padding-bottom: 67%;
+    @media (min-width: 1430px) {
+        padding-bottom: 45%;
     }
 
-    @media (min-width: 320px) and (max-aspect-ratio: 8/10) {
-        padding-bottom: 100%;
-    }
-
-    @media (min-width: 480px) and (max-aspect-ratio: 1/1) {
-        padding-bottom: 67%;
+    @media (min-width: 1640px) {
+        padding-bottom: 38%;
     }
 }
 
@@ -138,7 +134,7 @@
     position: absolute;
     left: 8px;
     right: 8px;
-    z-index: 1;
+    z-index: 1000;
 
     @include respondMinMax (1008px, false) {
         max-width: 992px;
